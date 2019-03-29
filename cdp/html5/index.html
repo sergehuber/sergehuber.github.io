@@ -666,7 +666,44 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <h2 id="_committee_specification_draft_01_public_review_draft_01_working_draft" class="discrete">Committee Specification Draft 01 / Public Review Draft 01 (Working Draft)</h2>
-<h2 id="_not_yet_published_21_march_2019" class="discrete">Not Yet Published (21 March 2019)</h2>
+<h2 id="_not_yet_published_29_march_2019" class="discrete">Not Yet Published (29 March 2019)</h2>
+<h3 id="_specification_uris" class="discrete">Specification URIs:</h3>
+<div class="paragraph">
+<p>This Version:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.oasis-open.org/cxs/cdp/v1.0/csprd01/cdp-v1.0-csprd01.adoc" class="bare">http://docs.oasis-open.org/cxs/cdp/v1.0/csprd01/cdp-v1.0-csprd01.adoc</a> (Authoritative)</p>
+</li>
+<li>
+<p><a href="http://docs.oasis-open.org/cxs/cdp/v1.0/csprd01/cdp-v1.0-csprd01.html" class="bare">http://docs.oasis-open.org/cxs/cdp/v1.0/csprd01/cdp-v1.0-csprd01.html</a></p>
+</li>
+<li>
+<p><a href="http://docs.oasis-open.org/cxs/cdp/v1.0/csprd01/cdp-v1.0-csprd01.pdf" class="bare">http://docs.oasis-open.org/cxs/cdp/v1.0/csprd01/cdp-v1.0-csprd01.pdf</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Previous Version:
+  N/A</p>
+</div>
+<div class="paragraph">
+<p>Latest Version:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.oasis-open.org/cxs/cdp/v1.0/cdp-v1.0.txt" class="bare">http://docs.oasis-open.org/cxs/cdp/v1.0/cdp-v1.0.txt</a> (Authoritative)</p>
+</li>
+<li>
+<p><a href="http://docs.oasis-open.org/cxs/cdp/v1.0/cdp-v1.0.html" class="bare">http://docs.oasis-open.org/cxs/cdp/v1.0/cdp-v1.0.html</a></p>
+</li>
+<li>
+<p><a href="http://docs.oasis-open.org/cxs/cdp/v1.0/cdp-v1.0.pdf" class="bare">http://docs.oasis-open.org/cxs/cdp/v1.0/cdp-v1.0.pdf</a></p>
+</li>
+</ul>
+</div>
 <h3 id="_technical_committee" class="discrete">Technical Committee:</h3>
 <div class="paragraph">
 <p>OASIS Context Server (CXS) TC</p>
@@ -700,12 +737,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>GraphQL sample implementation: <a href="http://docs.oasis-open.org/tc-short-name/WP-abbrev/version/csdXX/schemas/" class="bare">http://docs.oasis-open.org/tc-short-name/WP-abbrev/version/csdXX/schemas/</a> (hyperlink, including terminating /)</p>
-</li>
-<li>
-<p>Other parts (list full title and VISIBLE hyperlink, preferably to HTML version)</p>
+<p>Sample server implementation: <a href="https://github.com/oasis-tcs/cxs-cdp" class="bare">https://github.com/oasis-tcs/cxs-cdp</a></p>
 </li>
 </ul>
+</div>
+<div class="listingblock">
+<div class="title">To run server locally:</div>
+<div class="content">
+<pre>git clone https://github.com/oasis-tcs/cxs-cdp
+git checkout tags/v1.0.0
+cd cxs-cdp/server/
+npm install
+npm start</pre>
+</div>
 </div>
 <h3 id="_related_work" class="discrete">Related work:</h3>
 <div class="paragraph">
@@ -719,11 +763,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>GraphQL specification : <a href="https://facebook.github.io/graphql/" class="bare">https://facebook.github.io/graphql/</a></p>
 </li>
+<li>
+<p>Apache Unomi: <a href="https://unomi.apache.org" class="bare">https://unomi.apache.org</a></p>
+</li>
 </ul>
 </div>
 <h3 id="_abstract" class="discrete">Abstract:</h3>
 <div class="paragraph">
-<p>This specification aims to standardize exchange of customer data across systems and silos by defining a web-based API using GraphQL, thus providing a self-documented and strongly typed interface while allowing extensive customization. It is based upon four core concepts: Profiles, Events, Consents, and Clients.</p>
+<p>This specification aims to standardize exchange of customer data across systems and silos by defining a web-based API using GraphQL.
+The GraphQL api is a self-documented and strongly typed interface.
+It is designed to be dynamically extended, and allows extensive implementation specific customization.</p>
 </div>
 <h3 id="_status" class="discrete">Status:</h3>
 <div class="paragraph">
@@ -735,8 +784,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>This specification is provided under the Non-Assertion Mode of the OASIS IPR Policy, the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights section of the TC&#8217;s web page (<a href="https://www.oasis-open.org/committees/cxs/ipr.php" class="bare">https://www.oasis-open.org/committees/cxs/ipr.php</a>).</p>
 </div>
-<div class="paragraph">
-<p>Note that any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product&#8217;s prose narrative document(s), the content in the separate plain text file prevails.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product&#8217;s prose narrative document(s), the content in the separate plain text file prevails.
+</td>
+</tr>
+</table>
 </div>
 <h3 id="_citation_format" class="discrete">Citation format:</h3>
 <div class="paragraph">
@@ -1059,18 +1117,6 @@ GraphQL request. Here&#8217;s an example of the `variables part:</p>
 <div class="paragraph">
 <p>As illustrated above, the variables may contain complex JSON structure that represent the values for the objects that
 are passed as GraphQL arguments.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The most efficient way to explore the GraphQL API is by starting the sample CDP server TODO
-</td>
-</tr>
-</table>
 </div>
 <div class="sect2">
 <h3 id="_scalars">4.1. Scalars</h3>
@@ -1551,10 +1597,10 @@ I.e. if the property "firstName" with valueType string is available, the followi
 <div class="literalblock">
 <div class="content">
 <pre>firstName_equals
-firstName_startsWith (optional)
-firstName_endsWith (optional)
+firstName_startsWith (OPTIONAL)
+firstName_endsWith (OPTIONAL)
 firstName_contains
-firstName_regexp (optional)</pre>
+firstName_regexp (OPTIONAL)</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1754,7 +1800,7 @@ firstName_regexp (optional)</pre>
 </tbody>
 </table>
 <div class="paragraph">
-<p><a id="o"></a>[o] Optional operator</p>
+<p><a id="o"></a>[o] OPTIONAL operator</p>
 </div>
 <div class="paragraph">
 <p>The <code>Array</code> column is a special case. It can be an array of any GraphQL type. In this case only the <code>contains</code> operator
@@ -2673,7 +2719,11 @@ suffix to them. This will always happen and implementations MUST do this.</p>
 <p>Customer Data Platforms implementations SHOULD support profile merges.</p>
 </div>
 <div class="paragraph">
-<p>As profiles evolve over time, the Customer Data Platform may discover that two profiles actually represent the same individual i.e. if the same e-mail address is registered in both profiles, or if the user in on both his devices. This may then result in a profile merge.
+<p>As profiles evolve over time, the Customer Data Platform may discover that two profiles actually represent the same individual.
+I.e. if the same e-mail address is registered in both two different profiles.</p>
+</div>
+<div class="paragraph">
+<p>This may then result in a profile merge.
 During a profile merge, the Customer Data Platform will link two (or more) separate profiles together.
 In order to keep event history and avoid re-processing of data, the merge process must not affect the existing and unique profileIDs.
 This is why profiles are defined to have multiple profileIDs.</p>
@@ -2682,7 +2732,10 @@ This is why profiles are defined to have multiple profileIDs.</p>
 <p>Example: As such, when visitors on a website are tracked through a cookie (defining the profileID), the cookie will remain the same even if the profile is merged.</p>
 </div>
 <div class="paragraph">
-<p>Profile merges are optional in the CDP specification. They may be supported by using a property defined as an identifier as a merge key (multiple merge keys may of course exist) to merge multiple profiles. The resulting merged profile MUST contain all the source profile IDs of the merged profiles as well as the merged profile data. The original profiles that were merged may be flagged or deleted, this is implementation specific.</p>
+<p>Profile merges may for instance be supported by using identifying profile properties (such as email and/or social security number).
+The resulting merged profile MUST contain all the profile IDs of the merged profiles,
+as well as the merged profile data.
+The original profiles that were merged may be flagged or deleted, this is implementation specific.</p>
 </div>
 </div>
 <div class="sect3">
@@ -4423,7 +4476,7 @@ TODO Add history</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-25 14:39:42 CET
+Last updated 2019-03-29 11:41:14 CET
 </div>
 </div>
 </body>
