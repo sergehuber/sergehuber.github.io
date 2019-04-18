@@ -441,7 +441,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_domain_objects">3. Domain objects</a></li>
-<li><a href="#_api_reference">4. API Reference</a>
+<li><a href="#_api">4. API</a>
 <ul class="sectlevel2">
 <li><a href="#_scalars">4.1. Scalars</a>
 <ul class="sectlevel3">
@@ -650,8 +650,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_security_considerations">5. Security Considerations</a></li>
-<li><a href="#_conformance">6. Conformance</a></li>
+<li><a href="#_security_considerations">5. Security Considerations</a>
+<ul class="sectlevel2">
+<li><a href="#_attack_surface">5.1. Attack surface</a></li>
+<li><a href="#_client_tokens">5.2. Client tokens</a></li>
+<li><a href="#_access_control">5.3. Access control</a></li>
+<li><a href="#_authentication">5.4. Authentication</a></li>
+<li><a href="#_audit_logs">5.5. Audit logs</a></li>
+<li><a href="#_graphql">5.6. GraphQL</a></li>
+</ul>
+</li>
+<li><a href="#_conformance">6. Conformance</a>
+<ul class="sectlevel2">
+<li><a href="#_conformance_targets">6.1. Conformance targets</a></li>
+<li><a href="#_core_conformance">6.2. CORE conformance</a></li>
+<li><a href="#_full_conformance">6.3. FULL conformance</a></li>
+</ul>
+</li>
 <li><a href="#_appendix_a_acknowledgements">7. Appendix A. Acknowledgements</a></li>
 <li><a href="#_appendix_b_revision_history">8. Appendix B. Revision History</a></li>
 </ul>
@@ -1054,7 +1069,7 @@ Properties: Enable the definition of custom profile <a href="#_properties">Prope
 </div>
 </div>
 <div class="sect1">
-<h2 id="_api_reference">4. API Reference</h2>
+<h2 id="_api">4. API</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Customer Data Platform (CDP) standard is built around a set of concepts, domain objects and services for interacting with them.
@@ -1235,7 +1250,7 @@ I.e. from the example above: "setOfProperties.response" would hold the value "yo
 <dl>
 <dt class="hdlist1">Property name</dt>
 <dd>
-<p>it is RECOMMENDED but not mandatory to prefix the property name</p>
+<p>it is recommended but not mandatory to prefix the property name</p>
 </dd>
 <dt class="hdlist1">Value type</dt>
 <dd>
@@ -1274,7 +1289,7 @@ the API is dynamically updated when properties are added or changed.</p>
 <dl>
 <dt class="hdlist1">name</dt>
 <dd>
-<p>must be in a format that&#8217;s acceptable as a GraphQL field name (/[<em>A-Za-z][_0-9A-Za-z]*/) , and we RECOMMEND to prefix it to avoid conflicts, i.e acme_pageView, acme_click. "cdp</em>" is reserved.</p>
+<p>must be in a format that&#8217;s acceptable as a GraphQL field name (/[<em>A-Za-z][_0-9A-Za-z]*/) , we highly RECOMMEND to prefix it to avoid conflicts, i.e acme_pageView, acme_click. "cdp</em>" is reserved.</p>
 </dd>
 <dt class="hdlist1">minOccurences</dt>
 <dd>
@@ -1958,7 +1973,7 @@ For instance, if a client is used to track visitors across multiple websites, it
 </td>
 <td class="content">
 The standard does not specify Queries or Mutations for creating or retrieving Clients in the CDP specification, as this is considered an implementation-specific feature.
-For any CDP implementation, a Client MUST be defined before it can access the API.
+For any CDP implementation, a Client MUST be defined for it to access the API.
 </td>
 </tr>
 </table>
@@ -2165,7 +2180,7 @@ EventType fields MUST match the CDP propertyType format, and its underlying valu
 </table>
 </div>
 <div class="paragraph">
-<p>Below are examples of what custom EventTypes might look like, we used a VENDOR prefix as it is recommended to avoid
+<p>Below are examples of what custom EventTypes might look like, we used VENDOR as prefix, since it is recommended to avoid
 conflicts with other types:</p>
 </div>
 <div class="listingblock">
@@ -2716,7 +2731,7 @@ suffix to them. This will always happen and implementations MUST do this.</p>
 <div class="sect3">
 <h4 id="_profile_merges">4.9.2. Profile merges</h4>
 <div class="paragraph">
-<p>Customer Data Platforms implementations SHOULD support profile merges.</p>
+<p>Customer Data Platforms implementations MUST support profile merges.</p>
 </div>
 <div class="paragraph">
 <p>As profiles evolve over time, the Customer Data Platform may discover that two profiles actually represent the same individual.
@@ -2820,7 +2835,7 @@ The original profiles that were merged may be flagged or deleted, this is implem
 <h4 id="_cdp_profileupdateevent">4.9.7. CDP_ProfileUpdateEvent</h4>
 <div class="paragraph">
 <p>Profiles are crated and updated through this event type.
-This event is part of the standard and must be available for any implementation of the specification.</p>
+This event is part of the standard and MUST be available for any implementation of the specification.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4158,7 +4173,7 @@ a CDP can act as a real-time data source for advanced use cases in other applica
 </dd>
 <dt class="hdlist1">Parameters</dt>
 <dd>
-<p>JSON object supported by the specified algorithm. Algorithm must validate object itself. Parameters can be used to filter the results of the recommendation algorithm or any other custom processing that is supported by the implementation.</p>
+<p>JSON object supported by the specified algorithm. Algorithms must validate the object themselves. Parameters can be used to filter the results of the recommendation algorithm or any other custom processing that is supported by the implementation.</p>
 </dd>
 </dl>
 </div>
@@ -4166,6 +4181,9 @@ a CDP can act as a real-time data source for advanced use cases in other applica
 </div>
 <div class="sect2">
 <h3 id="_optimizations">4.21. Optimizations</h3>
+<div class="paragraph">
+<p>This part of the specification is OPTIONAL</p>
+</div>
 <div class="paragraph">
 <p>A specific application of data intelligence is smart decision making, or optimizations.
 In short, an optimization is done by passing a number of objects in, and letting the system rank them according to which is considered optimal.
@@ -4301,6 +4319,9 @@ For instance, which product is most relevant for a specific visitor.</p>
 <div class="sect2">
 <h3 id="_recommendations">4.22. Recommendations</h3>
 <div class="paragraph">
+<p>This part of the specification is OPTIONAL</p>
+</div>
+<div class="paragraph">
 <p>Unlike optimizations that act on a defined list of objects,
 recommendations take an object as input, only to suggest other objects based on a specific algorithm.</p>
 </div>
@@ -4409,19 +4430,75 @@ recommendations take an object as input, only to suggest other objects based on 
 <h2 id="_security_considerations">5. Security Considerations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TODO REMOVE: (Note: OASIS strongly recommends that Technical Committees consider issues that could affect security when implementing their specification and document them for implementers and adopters. For some purposes, you may find it required, e.g. if you apply for IANA registration.
-While it may not be immediately obvious how your specification might make systems vulnerable to attack, most specifications, because they involve communications between systems, message formats, or system settings, open potential channels for exploit. For example, IETF \[RFC3552] lists “eavesdropping, replay, message insertion, deletion, modification, and man-in-the-middle” as well as potential denial of service attacks as threats that must be considered and, if appropriate, addressed in IETF RFCs.</p>
+<p>The goal of CDP is to aggregate and store personal data.
+Failure in securing the data may have dramatic consequences, both financially and in direct customer relationship for the involved parties.</p>
+</div>
+<div class="sect2">
+<h3 id="_attack_surface">5.1. Attack surface</h3>
+<div class="paragraph">
+<p>Architecturally, CDP is designed to only be accessible through a single API. This limits the attack surface.
+Deliberately, the standard does not specify how the API is secured, as this can be handled using traditional web security mechanisms, such as IP filtering and certificates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_tokens">5.2. Client tokens</h3>
+<div class="paragraph">
+<p>Communicating with the API requires a valid <a href="#_clients">Client</a>.
+Implementers are strongly encouraged to use additional tokens or similar for securing the client access further.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_control">5.3. Access control</h3>
+<div class="paragraph">
+<p>By default, clients get access to all data stored in the CDP.</p>
 </div>
 <div class="paragraph">
-<p>In addition to considering and describing foreseeable risks, this section should include guidance on how implementers and adopters can protect against these risks
-We encourage editors and TC members concerned with this subject to read Guidelines for Writing RFC Text on Security Considerations, IETF \[RFC3552], for more information.)</p>
+<p>Implementers are encouraged to implement different levels of access control beyond this.
+For instance using roles or access control mechanisms, limiting clients to writing events,
+or allowing access to management objects, etc.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authentication">5.4. Authentication</h3>
+<div class="paragraph">
+<p>The specification does not set any requirements for authentication
+However, CDP specifies management objects that are intended to be created and handled by power-users and marketeers.</p>
 </div>
 <div class="paragraph">
-<p>TODO :
-- Talk about GraphQL input validation, <a href="https://facebook.github.io/graphql/June2018/#sec-Validation" class="bare">https://facebook.github.io/graphql/June2018/#sec-Validation</a>
-- Talk about managing personal information and GDPR
-- Access management for the API
-- Audit</p>
+<p>Implementers are encouraged to support a concepts for users in the implementation and API directly.</p>
+</div>
+<div class="paragraph">
+<p>By combining the concept of client tokens above with users and/or autorization tokens (i.e using Oauth),
+implementers may offer granular and controlled access to data through the CDP API.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is always recommended to proxy access to CDP through a gateway client.
+Direct access from end user devices and other clients poses a higher risk of exposing sensitive data.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_audit_logs">5.5. Audit logs</h3>
+<div class="paragraph">
+<p>For interaction with management object in particular, it is recommended to implement audit logging.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_graphql">5.6. GraphQL</h3>
+<div class="paragraph">
+<p>The API itself is strongly typed, but consider specific security measurements related to GraphQL, such as input validation.
+For more information: <a href="https://facebook.github.io/graphql/June2018/#sec-Validation" class="bare">https://facebook.github.io/graphql/June2018/#sec-Validation</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -4429,8 +4506,55 @@ We encourage editors and TC members concerned with this subject to read Guidelin
 <h2 id="_conformance">6. Conformance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TODO REMOVE: (For the definition of "conformance clause," see OASIS Defined Terms.
-See "Guidelines to Writing Conformance Clauses": <a href="http://docs.oasis-open.org/templates/TCHandbook/ConformanceGuidelines.html." class="bare">http://docs.oasis-open.org/templates/TCHandbook/ConformanceGuidelines.html.</a>)</p>
+<p>This section describes requirements for an implementation to claim specification conformance.</p>
+</div>
+<div class="sect2">
+<h3 id="_conformance_targets">6.1. Conformance targets</h3>
+<div class="paragraph">
+<p>There are two defined levels of conformance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CORE (minimum level conformance)</p>
+</li>
+<li>
+<p>FULL (complete implementation, including intelligence capabilities)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_core_conformance">6.2. CORE conformance</h3>
+<div class="paragraph">
+<p>CORE conformance CDP server implementations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MUST implement the specifications of the <a href="#_api">API</a> section</p>
+</li>
+<li>
+<p>MAY implement any parts of the <a href="#_api">API</a> specification marked as OPTIONAL</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_full_conformance">6.3. FULL conformance</h3>
+<div class="paragraph">
+<p>CORE conformance CDP server implementations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MUST meet all requirements of the CORE conformance</p>
+</li>
+<li>
+<p>MUST additionally implement all OPTIONAL parts of the <a href="#_api">API</a> specification</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -4454,12 +4578,6 @@ See "Guidelines to Writing Conformance Clauses": <a href="http://docs.oasis-open
 <li>
 <p>Chris Laprun, RedHat</p>
 </li>
-<li>
-<p>Participant Name, Affiliation | Individual Member</p>
-</li>
-<li>
-<p>Participant Name, Affiliation | Individual Member</p>
-</li>
 </ul>
 </div>
 </div>
@@ -4476,7 +4594,7 @@ TODO Add history</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-29 11:41:14 CET
+Last updated 2019-04-18 09:18:00 CEST
 </div>
 </div>
 </body>
