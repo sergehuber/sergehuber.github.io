@@ -428,7 +428,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_terminology">1.1. Terminology</a></li>
 <li><a href="#_normative_references">1.2. Normative References</a></li>
-<li><a href="#_non_normative_references">1.3. Non-Normative References</a></li>
 </ul>
 </li>
 <li><a href="#_use_cases">2. Use Cases</a>
@@ -443,209 +442,216 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_domain_objects">3. Domain objects</a></li>
 <li><a href="#_api">4. API</a>
 <ul class="sectlevel2">
-<li><a href="#_scalars">4.1. Scalars</a>
+<li><a href="#_graphql_limitations_and_workarounds">4.1. GraphQL limitations and workarounds</a></li>
+<li><a href="#_scalars">4.2. Scalars</a>
 <ul class="sectlevel3">
-<li><a href="#_json">4.1.1. JSON</a></li>
-<li><a href="#_date">4.1.2. Date</a></li>
-<li><a href="#_time">4.1.3. Time</a></li>
-<li><a href="#_datetime">4.1.4. DateTime</a></li>
-<li><a href="#_geopoint">4.1.5. GeoPoint</a></li>
+<li><a href="#_json">4.2.1. JSON</a></li>
+<li><a href="#_date">4.2.2. Date</a></li>
+<li><a href="#_time">4.2.3. Time</a></li>
+<li><a href="#_datetime">4.2.4. DateTime</a></li>
+<li><a href="#_geopoint">4.2.5. GeoPoint</a></li>
 </ul>
 </li>
-<li><a href="#_properties">4.2. Properties</a>
+<li><a href="#_properties">4.3. Properties</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_property">4.2.1. CDP_Property</a></li>
-<li><a href="#_cdp_propertyinput">4.2.2. CDP_PropertyInput</a></li>
-<li><a href="#_cdp_booleanproperty">4.2.3. CDP_BooleanProperty</a></li>
-<li><a href="#_cdp_booleanpropertyinput">4.2.4. CDP_BooleanPropertyInput</a></li>
-<li><a href="#_cdp_dateproperty">4.2.5. CDP_DateProperty</a></li>
-<li><a href="#_cdp_datepropertyinput">4.2.6. CDP_DatePropertyInput</a></li>
-<li><a href="#_cdp_enumproperty">4.2.7. CDP_EnumProperty</a></li>
-<li><a href="#_cdp_enumpropertyinput">4.2.8. CDP_EnumPropertyInput</a></li>
-<li><a href="#_cdp_floatproperty">4.2.9. CDP_FloatProperty</a></li>
-<li><a href="#_cdp_floatpropertyinput">4.2.10. CDP_FloatPropertyInput</a></li>
-<li><a href="#_cdp_geopointproperty">4.2.11. CDP_GeoPointProperty</a></li>
-<li><a href="#_cdp_geopointpropertyinput">4.2.12. CDP_GeoPointPropertyInput</a></li>
-<li><a href="#_cdp_identifierproperty">4.2.13. CDP_IdentifierProperty</a></li>
-<li><a href="#_cdp_identifierpropertyinput">4.2.14. CDP_IdentifierPropertyInput</a></li>
-<li><a href="#_cdp_intproperty">4.2.15. CDP_IntProperty</a></li>
-<li><a href="#_cdp_intpropertyinput">4.2.16. CDP_IntPropertyInput</a></li>
-<li><a href="#_cdp_stringproperty">4.2.17. CDP_StringProperty</a></li>
-<li><a href="#_cdp_stringpropertyinput">4.2.18. CDP_StringPropertyInput</a></li>
-<li><a href="#_cdp_setproperty">4.2.19. CDP_SetProperty</a></li>
-<li><a href="#_cdp_setpropertyinput">4.2.20. CDP_SetPropertyInput</a></li>
+<li><a href="#_cdp_propertyinterface">4.3.1. CDP_PropertyInterface</a></li>
+<li><a href="#_cdp_propertyinput">4.3.2. CDP_PropertyInput</a></li>
+<li><a href="#_cdp_booleanproperty">4.3.3. CDP_BooleanProperty</a></li>
+<li><a href="#_cdp_booleanpropertyinput">4.3.4. CDP_BooleanPropertyInput</a></li>
+<li><a href="#_cdp_dateproperty">4.3.5. CDP_DateProperty</a></li>
+<li><a href="#_cdp_datepropertyinput">4.3.6. CDP_DatePropertyInput</a></li>
+<li><a href="#_cdp_enumproperty">4.3.7. CDP_EnumProperty</a></li>
+<li><a href="#_cdp_enumpropertyinput">4.3.8. CDP_EnumPropertyInput</a></li>
+<li><a href="#_cdp_floatproperty">4.3.9. CDP_FloatProperty</a></li>
+<li><a href="#_cdp_floatpropertyinput">4.3.10. CDP_FloatPropertyInput</a></li>
+<li><a href="#_cdp_geopointproperty">4.3.11. CDP_GeoPointProperty</a></li>
+<li><a href="#_cdp_geopointpropertyinput">4.3.12. CDP_GeoPointPropertyInput</a></li>
+<li><a href="#_cdp_identifierproperty">4.3.13. CDP_IdentifierProperty</a></li>
+<li><a href="#_cdp_identifierpropertyinput">4.3.14. CDP_IdentifierPropertyInput</a></li>
+<li><a href="#_cdp_intproperty">4.3.15. CDP_IntProperty</a></li>
+<li><a href="#_cdp_intpropertyinput">4.3.16. CDP_IntPropertyInput</a></li>
+<li><a href="#_cdp_stringproperty">4.3.17. CDP_StringProperty</a></li>
+<li><a href="#_cdp_stringpropertyinput">4.3.18. CDP_StringPropertyInput</a></li>
+<li><a href="#_cdp_setproperty">4.3.19. CDP_SetProperty</a></li>
+<li><a href="#_cdp_setpropertyinput">4.3.20. CDP_SetPropertyInput</a></li>
 </ul>
 </li>
-<li><a href="#_filters">4.3. Filters</a>
+<li><a href="#_filters">4.4. Filters</a>
 <ul class="sectlevel3">
-<li><a href="#_ordering">4.3.1. Ordering</a></li>
-<li><a href="#_cdp_sortorder">4.3.2. CDP_SortOrder</a></li>
-<li><a href="#_cdp_orderbyinput">4.3.3. CDP_OrderByInput</a></li>
-<li><a href="#_cdp_datefilter">4.3.4. CDP_DateFilter</a></li>
-<li><a href="#_cdp_datefilterinput">4.3.5. CDP_DateFilterInput</a></li>
-<li><a href="#_cdp_geodistancefilterunit">4.3.6. CDP_GeoDistanceFilterUnit</a></li>
-<li><a href="#_cdp_geodistancefilter">4.3.7. CDP_GeoDistanceFilter</a></li>
-<li><a href="#_cdp_geodistancefilterinput">4.3.8. CDP_GeoDistanceFilterInput</a></li>
+<li><a href="#_ordering">4.4.1. Ordering</a></li>
+<li><a href="#_cdp_sortorder">4.4.2. CDP_SortOrder</a></li>
+<li><a href="#_cdp_orderbyinput">4.4.3. CDP_OrderByInput</a></li>
+<li><a href="#_cdp_datefilter">4.4.4. CDP_DateFilter</a></li>
+<li><a href="#_cdp_datefilterinput">4.4.5. CDP_DateFilterInput</a></li>
+<li><a href="#_cdp_geodistancefilterunit">4.4.6. CDP_GeoDistanceFilterUnit</a></li>
+<li><a href="#_cdp_geodistancefilter">4.4.7. CDP_GeoDistanceFilter</a></li>
+<li><a href="#_cdp_geodistancefilterinput">4.4.8. CDP_GeoDistanceFilterInput</a></li>
 </ul>
 </li>
-<li><a href="#_clients">4.4. Clients</a>
+<li><a href="#_clients">4.5. Clients</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_client">4.4.1. CDP_Client</a></li>
+<li><a href="#_cdp_client">4.5.1. CDP_Client</a></li>
+<li><a href="#_cdp_clientinput">4.5.2. CDP_ClientInput</a></li>
 </ul>
 </li>
-<li><a href="#_sources">4.5. Sources</a>
+<li><a href="#_sources">4.6. Sources</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_source">4.5.1. CDP_Source</a></li>
-<li><a href="#_cdp_sourceinput">4.5.2. CDP_SourceInput</a></li>
-<li><a href="#_cdp_query">4.5.3. CDP_Query</a></li>
-<li><a href="#_cdp_mutation">4.5.4. CDP_Mutation</a></li>
+<li><a href="#_cdp_source">4.6.1. CDP_Source</a></li>
+<li><a href="#_cdp_sourceinput">4.6.2. CDP_SourceInput</a></li>
+<li><a href="#_cdp_query">4.6.3. CDP_Query</a></li>
+<li><a href="#_cdp_mutation">4.6.4. CDP_Mutation</a></li>
 </ul>
 </li>
-<li><a href="#_objects">4.6. Objects</a>
+<li><a href="#_objects">4.7. Objects</a>
 <ul class="sectlevel3">
-<li><a href="#_uris">4.6.1. URIs</a></li>
-<li><a href="#_cdp_object">4.6.2. CDP_Object</a></li>
-<li><a href="#_cdp_objectinput">4.6.3. CDP_ObjectInput</a></li>
+<li><a href="#_uris">4.7.1. URIs</a></li>
+<li><a href="#_cdp_object">4.7.2. CDP_Object</a></li>
+<li><a href="#_cdp_objectinput">4.7.3. CDP_ObjectInput</a></li>
 </ul>
 </li>
-<li><a href="#_events">4.7. Events</a>
+<li><a href="#_events">4.8. Events</a>
 <ul class="sectlevel3">
-<li><a href="#_eventtypes">4.7.1. EventTypes</a></li>
-<li><a href="#_cdp_eventinterface">4.7.2. CDP_EventInterface</a></li>
-<li><a href="#_cdp_eventinput">4.7.3. CDP_EventInput</a></li>
-<li><a href="#_cdp_query_2">4.7.4. CDP_Query</a></li>
-<li><a href="#_cdp_mutation_2">4.7.5. CDP_Mutation</a></li>
-<li><a href="#_cdp_subscriptions">4.7.6. CDP_Subscriptions</a></li>
-<li><a href="#_event_processing_sample">4.7.7. Event processing sample</a></li>
+<li><a href="#_eventtypes">4.8.1. EventTypes</a></li>
+<li><a href="#_cdp_eventinterface">4.8.2. CDP_EventInterface</a></li>
+<li><a href="#_cdp_eventinput">4.8.3. CDP_EventInput</a></li>
+<li><a href="#_cdp_query_2">4.8.4. CDP_Query</a></li>
+<li><a href="#_cdp_mutation_2">4.8.5. CDP_Mutation</a></li>
+<li><a href="#_cdp_subscriptions">4.8.6. CDP_Subscriptions</a></li>
+<li><a href="#_event_processing_sample">4.8.7. Event processing sample</a></li>
 </ul>
 </li>
-<li><a href="#_eventfilters">4.8. EventFilters</a>
+<li><a href="#_eventfilters">4.9. EventFilters</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_eventfilter">4.8.1. CDP_EventFilter</a></li>
-<li><a href="#_cdp_eventfilterinput">4.8.2. CDP_EventFilterInput</a></li>
+<li><a href="#_cdp_eventfilter">4.9.1. CDP_EventFilter</a></li>
+<li><a href="#_cdp_eventfilterinput">4.9.2. CDP_EventFilterInput</a></li>
 </ul>
 </li>
-<li><a href="#_profiles">4.9. Profiles</a>
+<li><a href="#_profiles">4.10. Profiles</a>
 <ul class="sectlevel3">
-<li><a href="#_profile_properties">4.9.1. Profile properties</a></li>
-<li><a href="#_profile_merges">4.9.2. Profile merges</a></li>
-<li><a href="#_cdp_profileid">4.9.3. CDP_ProfileID</a></li>
-<li><a href="#_cdp_profileidinput">4.9.4. CDP_ProfileIDInput</a></li>
-<li><a href="#_cdp_profileinterface">4.9.5. CDP_ProfileInterface</a></li>
-<li><a href="#_cdp_profile">4.9.6. CDP_Profile</a></li>
-<li><a href="#_cdp_profileupdateevent">4.9.7. CDP_ProfileUpdateEvent</a></li>
-<li><a href="#_cdp_profileupdateeventinput">4.9.8. CDP_ProfileUpdateEventInput</a></li>
-<li><a href="#_cdp_profileupdateeventfilter">4.9.9. CDP_ProfileUpdateEventFilter</a></li>
-<li><a href="#_cdp_profileupdateeventfilterinput">4.9.10. CDP_ProfileUpdateEventFilterInput</a></li>
-<li><a href="#_cdp_query_3">4.9.11. CDP_Query</a></li>
-<li><a href="#_cdp_mutation_3">4.9.12. CDP_Mutation</a></li>
-<li><a href="#_cdp_subscription">4.9.13. CDP_Subscription</a></li>
+<li><a href="#_profile_properties">4.10.1. Profile properties</a></li>
+<li><a href="#_profile_merges">4.10.2. Profile merges</a></li>
+<li><a href="#_deleting_profile_personal_data_aka_profile_anonymizing">4.10.3. Deleting profile personal data (aka profile anonymizing)</a></li>
+<li><a href="#_cdp_profileid">4.10.4. CDP_ProfileID</a></li>
+<li><a href="#_cdp_profileidinput">4.10.5. CDP_ProfileIDInput</a></li>
+<li><a href="#_cdp_profileinterface">4.10.6. CDP_ProfileInterface</a></li>
+<li><a href="#_cdp_profile">4.10.7. CDP_Profile</a></li>
+<li><a href="#_cdp_profileupdateevent">4.10.8. CDP_ProfileUpdateEvent</a></li>
+<li><a href="#_cdp_profileupdateeventinput">4.10.9. CDP_ProfileUpdateEventInput</a></li>
+<li><a href="#_cdp_profileupdateeventfilter">4.10.10. CDP_ProfileUpdateEventFilter</a></li>
+<li><a href="#_cdp_profileupdateeventfilterinput">4.10.11. CDP_ProfileUpdateEventFilterInput</a></li>
+<li><a href="#_cdp_query_3">4.10.12. CDP_Query</a></li>
+<li><a href="#_cdp_mutation_3">4.10.13. CDP_Mutation</a></li>
+<li><a href="#_cdp_subscription">4.10.14. CDP_Subscription</a></li>
 </ul>
 </li>
-<li><a href="#_profilefilters">4.10. ProfileFilters</a>
+<li><a href="#_profilefilters">4.11. ProfileFilters</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_profilefilter">4.10.1. CDP_ProfileFilter</a></li>
-<li><a href="#_cdp_profilefilterinput">4.10.2. CDP_ProfileFilterInput</a></li>
-<li><a href="#_cdp_profilepropertiesfilter">4.10.3. CDP_ProfilePropertiesFilter</a></li>
-<li><a href="#_cdp_profilepropertiesfilterinput">4.10.4. CDP_ProfilePropertiesFilterInput</a></li>
-<li><a href="#_cdp_profileeventsfilter">4.10.5. CDP_ProfileEventsFilter</a></li>
-<li><a href="#_cdp_profileeventsfilterinput">4.10.6. CDP_ProfileEventsFilterInput</a></li>
+<li><a href="#_cdp_profilefilter">4.11.1. CDP_ProfileFilter</a></li>
+<li><a href="#_cdp_profilefilterinput">4.11.2. CDP_ProfileFilterInput</a></li>
+<li><a href="#_cdp_profilepropertiesfilter">4.11.3. CDP_ProfilePropertiesFilter</a></li>
+<li><a href="#_cdp_profilepropertiesfilterinput">4.11.4. CDP_ProfilePropertiesFilterInput</a></li>
+<li><a href="#_cdp_profileeventsfilter">4.11.5. CDP_ProfileEventsFilter</a></li>
+<li><a href="#_cdp_profileeventsfilterinput">4.11.6. CDP_ProfileEventsFilterInput</a></li>
 </ul>
 </li>
-<li><a href="#_sessions">4.11. Sessions</a>
+<li><a href="#_sessions">4.12. Sessions</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_sessionstate">4.11.1. CDP_SessionState</a></li>
-<li><a href="#_cdp_sessionevent">4.11.2. CDP_SessionEvent</a></li>
-<li><a href="#_cdp_sessioneventinput">4.11.3. CDP_SessionEventInput</a></li>
+<li><a href="#_cdp_sessionstate">4.12.1. CDP_SessionState</a></li>
+<li><a href="#_cdp_sessionevent">4.12.2. CDP_SessionEvent</a></li>
+<li><a href="#_cdp_sessioneventinput">4.12.3. CDP_SessionEventInput</a></li>
+<li><a href="#_cdp_sessioneventfilter">4.12.4. CDP_SessionEventFilter</a></li>
+<li><a href="#_cdp_sessioneventfilterinput">4.12.5. CDP_SessionEventFilterInput</a></li>
 </ul>
 </li>
-<li><a href="#_consents">4.12. Consents</a>
+<li><a href="#_consents">4.13. Consents</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_consentstatus">4.12.1. CDP_ConsentStatus</a></li>
-<li><a href="#_cdp_consent">4.12.2. CDP_Consent</a></li>
-<li><a href="#_cdp_consentupdateevent">4.12.3. CDP_ConsentUpdateEvent</a></li>
-<li><a href="#_cdp_consentupdateeventinput">4.12.4. CDP_ConsentUpdateEventInput</a></li>
-<li><a href="#_cdp_consentupdateeventfilter">4.12.5. CDP_ConsentUpdateEventFilter</a></li>
-<li><a href="#_cdp_consentupdateeventfilterinput">4.12.6. CDP_ConsentUpdateEventFilterInput</a></li>
+<li><a href="#_cdp_consentstatus">4.13.1. CDP_ConsentStatus</a></li>
+<li><a href="#_cdp_consent">4.13.2. CDP_Consent</a></li>
+<li><a href="#_cdp_consentupdateevent">4.13.3. CDP_ConsentUpdateEvent</a></li>
+<li><a href="#_cdp_consentupdateeventinput">4.13.4. CDP_ConsentUpdateEventInput</a></li>
+<li><a href="#_cdp_consentupdateeventfilter">4.13.5. CDP_ConsentUpdateEventFilter</a></li>
+<li><a href="#_cdp_consentupdateeventfilterinput">4.13.6. CDP_ConsentUpdateEventFilterInput</a></li>
 </ul>
 </li>
-<li><a href="#_views">4.13. Views</a>
+<li><a href="#_views">4.14. Views</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_view">4.13.1. CDP_View</a></li>
-<li><a href="#_cdp_viewinput">4.13.2. CDP_ViewInput</a></li>
-<li><a href="#_cdp_query_4">4.13.3. CDP_Query</a></li>
-<li><a href="#_cdp_mutation_4">4.13.4. CDP_Mutation</a></li>
+<li><a href="#_cdp_view">4.14.1. CDP_View</a></li>
+<li><a href="#_cdp_viewinput">4.14.2. CDP_ViewInput</a></li>
+<li><a href="#_cdp_query_4">4.14.3. CDP_Query</a></li>
+<li><a href="#_cdp_mutation_4">4.14.4. CDP_Mutation</a></li>
 </ul>
 </li>
-<li><a href="#_topics">4.14. Topics</a>
+<li><a href="#_topics">4.15. Topics</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_topic">4.14.1. CDP_Topic</a></li>
-<li><a href="#_cdp_topicinput">4.14.2. CDP_TopicInput</a></li>
-<li><a href="#_cdp_topicfilterinput">4.14.3. CDP_TopicFilterInput</a></li>
-<li><a href="#_cdp_query_5">4.14.4. CDP_Query</a></li>
-<li><a href="#_cdp_mutation_5">4.14.5. CDP_Mutation</a></li>
+<li><a href="#_cdp_topic">4.15.1. CDP_Topic</a></li>
+<li><a href="#_cdp_topicinput">4.15.2. CDP_TopicInput</a></li>
+<li><a href="#_cdp_topicfilterinput">4.15.3. CDP_TopicFilterInput</a></li>
+<li><a href="#_cdp_query_5">4.15.4. CDP_Query</a></li>
+<li><a href="#_cdp_mutation_5">4.15.5. CDP_Mutation</a></li>
 </ul>
 </li>
-<li><a href="#_interests">4.15. Interests</a>
+<li><a href="#_interests">4.16. Interests</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_interest">4.15.1. CDP_Interest</a></li>
-<li><a href="#_cdp_interestinput">4.15.2. CDP_InterestInput</a></li>
+<li><a href="#_cdp_interest">4.16.1. CDP_Interest</a></li>
+<li><a href="#_cdp_interestinput">4.16.2. CDP_InterestInput</a></li>
+<li><a href="#_cdp_interestfilter">4.16.3. CDP_InterestFilter</a></li>
+<li><a href="#_cdp_interestfilterinput">4.16.4. CDP_InterestFilterInput</a></li>
 </ul>
 </li>
-<li><a href="#_personas">4.16. Personas</a>
+<li><a href="#_personas">4.17. Personas</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_persona">4.16.1. CDP_Persona</a></li>
-<li><a href="#_cdp_personainput">4.16.2. CDP_PersonaInput</a></li>
-<li><a href="#_cdp_personaconsentinput">4.16.3. CDP_PersonaConsentInput</a></li>
-<li><a href="#_cdp_query_6">4.16.4. CDP_Query</a></li>
-<li><a href="#_cdp_mutation_6">4.16.5. CDP_Mutation</a></li>
+<li><a href="#_cdp_persona">4.17.1. CDP_Persona</a></li>
+<li><a href="#_cdp_personainput">4.17.2. CDP_PersonaInput</a></li>
+<li><a href="#_cdp_personaconsentinput">4.17.3. CDP_PersonaConsentInput</a></li>
+<li><a href="#_cdp_query_6">4.17.4. CDP_Query</a></li>
+<li><a href="#_cdp_mutation_6">4.17.5. CDP_Mutation</a></li>
 </ul>
 </li>
-<li><a href="#_lists">4.17. Lists</a>
+<li><a href="#_lists">4.18. Lists</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_list">4.17.1. CDP_List</a></li>
-<li><a href="#_cdp_listinput">4.17.2. CDP_ListInput</a></li>
-<li><a href="#_cdp_listsupdateevent">4.17.3. CDP_ListsUpdateEvent</a></li>
-<li><a href="#_cdp_listsupdateeventinput">4.17.4. CDP_ListsUpdateEventInput</a></li>
-<li><a href="#_cdp_listsupdateeventfilter">4.17.5. CDP_ListsUpdateEventFilter</a></li>
-<li><a href="#_cdp_listsupdateeventfilterinput">4.17.6. CDP_ListsUpdateEventFilterInput</a></li>
-<li><a href="#_cdp_listsfilterinput">4.17.7. CDP_ListsFilterInput</a></li>
-<li><a href="#_cdp_query_7">4.17.8. CDP_Query</a></li>
-<li><a href="#_cdp_mutation_7">4.17.9. CDP_Mutation</a></li>
+<li><a href="#_cdp_list">4.18.1. CDP_List</a></li>
+<li><a href="#_cdp_listinput">4.18.2. CDP_ListInput</a></li>
+<li><a href="#_cdp_listsupdateevent">4.18.3. CDP_ListsUpdateEvent</a></li>
+<li><a href="#_cdp_listsupdateeventinput">4.18.4. CDP_ListsUpdateEventInput</a></li>
+<li><a href="#_cdp_listsupdateeventfilter">4.18.5. CDP_ListsUpdateEventFilter</a></li>
+<li><a href="#_cdp_listsupdateeventfilterinput">4.18.6. CDP_ListsUpdateEventFilterInput</a></li>
+<li><a href="#_cdp_listfilterinput">4.18.7. CDP_ListFilterInput</a></li>
+<li><a href="#_cdp_query_7">4.18.8. CDP_Query</a></li>
+<li><a href="#_cdp_mutation_7">4.18.9. CDP_Mutation</a></li>
 </ul>
 </li>
-<li><a href="#_segments">4.18. Segments</a>
+<li><a href="#_segments">4.19. Segments</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_segment">4.18.1. CDP_Segment</a></li>
-<li><a href="#_cdp_segmentinput">4.18.2. CDP_SegmentInput</a></li>
-<li><a href="#_cdp_segmentfilterinput">4.18.3. CDP_SegmentFilterInput</a></li>
-<li><a href="#_cdp_query_8">4.18.4. CDP_Query</a></li>
-<li><a href="#_cdp_mutation_8">4.18.5. CDP_Mutation</a></li>
+<li><a href="#_cdp_segment">4.19.1. CDP_Segment</a></li>
+<li><a href="#_cdp_segmentinput">4.19.2. CDP_SegmentInput</a></li>
+<li><a href="#_cdp_segmentfilterinput">4.19.3. CDP_SegmentFilterInput</a></li>
+<li><a href="#_cdp_query_8">4.19.4. CDP_Query</a></li>
+<li><a href="#_cdp_mutation_8">4.19.5. CDP_Mutation</a></li>
 </ul>
 </li>
-<li><a href="#_profile_matching">4.19. Profile matching</a>
+<li><a href="#_profile_matching">4.20. Profile matching</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_namedfilterinput">4.19.1. CDP_NamedFilterInput</a></li>
-<li><a href="#_cdp_filtermatch">4.19.2. CDP_FilterMatch</a></li>
+<li><a href="#_cdp_namedfilterinput">4.20.1. CDP_NamedFilterInput</a></li>
+<li><a href="#_cdp_filtermatch">4.20.2. CDP_FilterMatch</a></li>
 </ul>
 </li>
-<li><a href="#_data_intelligence">4.20. Data Intelligence</a>
+<li><a href="#_data_intelligence">4.21. Data Intelligence</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_scoredobject">4.20.1. CDP_ScoredObject</a></li>
-<li><a href="#_cdp_algorithminput">4.20.2. CDP_AlgorithmInput</a></li>
+<li><a href="#_cdp_scoredobject">4.21.1. CDP_ScoredObject</a></li>
+<li><a href="#_cdp_algorithminput">4.21.2. CDP_AlgorithmInput</a></li>
 </ul>
 </li>
-<li><a href="#_optimizations">4.21. Optimizations</a>
+<li><a href="#_optimizations">4.22. Optimizations</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_optimizationresult">4.21.1. CDP_OptimizationResult</a></li>
-<li><a href="#_cdp_optimizationinput">4.21.2. CDP_OptimizationInput</a></li>
-<li><a href="#_cdp_eventoccurenceboostinput">4.21.3. CDP_EventOccurenceBoostInput</a></li>
+<li><a href="#_cdp_optimizationresult">4.22.1. CDP_OptimizationResult</a></li>
+<li><a href="#_cdp_optimizationinput">4.22.2. CDP_OptimizationInput</a></li>
+<li><a href="#_cdp_eventoccurenceboostinput">4.22.3. CDP_EventOccurenceBoostInput</a></li>
 </ul>
 </li>
-<li><a href="#_recommendations">4.22. Recommendations</a>
+<li><a href="#_recommendations">4.23. Recommendations</a>
 <ul class="sectlevel3">
-<li><a href="#_cdp_recommendationresult">4.22.1. CDP_RecommendationResult</a></li>
-<li><a href="#_cdp_recommendationinput">4.22.2. CDP_RecommendationInput</a></li>
+<li><a href="#_cdp_recommendationresult">4.23.1. CDP_RecommendationResult</a></li>
+<li><a href="#_cdp_recommendationinput">4.23.2. CDP_RecommendationInput</a></li>
 </ul>
 </li>
 </ul>
@@ -653,11 +659,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_security_considerations">5. Security Considerations</a>
 <ul class="sectlevel2">
 <li><a href="#_attack_surface">5.1. Attack surface</a></li>
-<li><a href="#_client_tokens">5.2. Client tokens</a></li>
-<li><a href="#_access_control">5.3. Access control</a></li>
-<li><a href="#_authentication">5.4. Authentication</a></li>
-<li><a href="#_audit_logs">5.5. Audit logs</a></li>
-<li><a href="#_graphql">5.6. GraphQL</a></li>
+<li><a href="#_network_communication">5.2. Network communication</a></li>
+<li><a href="#_client_tokens">5.3. Client tokens</a></li>
+<li><a href="#_access_control">5.4. Access control</a></li>
+<li><a href="#_authentication">5.5. Authentication</a></li>
+<li><a href="#_audit_logs">5.6. Audit logs</a></li>
+<li><a href="#_input_validation">5.7. Input validation</a></li>
 </ul>
 </li>
 <li><a href="#_conformance">6. Conformance</a>
@@ -890,12 +897,6 @@ As such, the API dynamically evolves as you customize your deployment.</p>
 <p>[RFC8174]	Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, <a href="http://www.rfc-editor.org/info/rfc8174" class="bare">http://www.rfc-editor.org/info/rfc8174</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_non_normative_references">1.3. Non-Normative References</h3>
-<div class="paragraph">
-<p>[RFC3552]	Rescorla, E. and B. Korver, "Guidelines for Writing RFC Text on Security Considerations", BCP 72, RFC 3552, DOI 10.17487/RFC3552, July 2003, <a href="https://www.rfc-editor.org/info/rfc3552" class="bare">https://www.rfc-editor.org/info/rfc3552</a>.</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -957,14 +958,15 @@ Examples or such might be events, properties or consents.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>As illustrated above, the browser can interact with both a Content Management System (CMS) and a CDP-compliant server
-to first retrieve the HTML needed to deliver the page content. After this the next request to the CMS is a request
+<p>As illustrated above, the browser can interact with both a (headless or regular) Content Management System (CMS) and a CDP-compliant server
+to first retrieve the HTML needed to deliver the page content or bootstrap a Progressive Web Application (PWA). After this the next request to the CMS is a request
 for personalized content that will be customized based on the profile retrieved from the CDP. The result is personalized
 content for the current visitor being sent back to the browser.</p>
 </div>
 <div class="paragraph">
 <p>This illustration is by no means the only way to implement personalization using a CDP but it serves as a simple
-introduction to the possibilies such a system may offer.</p>
+introduction to the possibilies such a system may offer. Even native mobile applications could be integrated using this
+pattern.</p>
 </div>
 </div>
 <div class="sect2">
@@ -984,7 +986,11 @@ but it would not be a good idea to send it to people that have already purchased
 defined segment to retrieve the subset of profiles it is interested in. Once those profiles are retrieved they may be
 used to update the newsletters management system lists with information coming from those exported profiles. And finally,
 when the newsletter is ready to be distributed, the updated lists may be used to send the emails using an email delivery
-server.</p>
+server or service.</p>
+</div>
+<div class="paragraph">
+<p>This use case could be expanded to use segmentation, campaigns and other Marketing Automation technologies that could
+benefit from the standardized functionalities exposed by this specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1012,6 +1018,23 @@ in different fashions but they will be remembered by the CDP for future displays
 <div class="sectionbody">
 <div class="paragraph">
 <p>Below is a short introduction to the core domain objects of the specification:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/object-model.png" alt="Logical and simplified object model graph">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Blue objects are typically manually configured and managed, red objects are generated.
+</td>
+</tr>
+</table>
 </div>
 <div class="dlist">
 <dl>
@@ -1134,7 +1157,26 @@ GraphQL request. Here&#8217;s an example of the `variables part:</p>
 are passed as GraphQL arguments.</p>
 </div>
 <div class="sect2">
-<h3 id="_scalars">4.1. Scalars</h3>
+<h3 id="_graphql_limitations_and_workarounds">4.1. GraphQL limitations and workarounds</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">No support for inheritance in input types</dt>
+<dd>
+<p>as a workaround a wrapper type is used that contains fields for all the different possible sub-object types. The <a href="#_cdp_propertyinput">CDP_PropertyInput</a> type is an example of such a workaround</p>
+</dd>
+<dt class="hdlist1">Namespacing</dt>
+<dd>
+<p>all types are prefixed with the <code>CDP_</code> prefix to avoid conflicts with custom-defined types. Also for types that may mix CDP standard and user-defined fields, a <code>cdp_</code> prefix has been used.</p>
+</dd>
+<dt class="hdlist1">Dynamic API</dt>
+<dd>
+<p>as parts of the API are generated from user-defined properties or event types, removal of fields and types may happen dynamically. Implementors should advise users about this or create workarounds (such as <a href="https://www.apollographql.com/docs/graphql-tools/schema-directives">depreciation</a>).</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scalars">4.2. Scalars</h3>
 <div class="paragraph">
 <p>GraphQL provides several basic value types that are used extensively in this specification, for instance Int and String.
 However, the CDP specification is also handling other value types in a similar fashion.</p>
@@ -1143,7 +1185,7 @@ However, the CDP specification is also handling other value types in a similar f
 <p>The following scalars have been specifically added:</p>
 </div>
 <div class="sect3">
-<h4 id="_json">4.1.1. JSON</h4>
+<h4 id="_json">4.2.1. JSON</h4>
 <div class="paragraph">
 <p>For values and arguments that cannot be defined structurally</p>
 </div>
@@ -1154,7 +1196,7 @@ However, the CDP specification is also handling other value types in a similar f
 </div>
 </div>
 <div class="sect3">
-<h4 id="_date">4.1.2. Date</h4>
+<h4 id="_date">4.2.2. Date</h4>
 <div class="paragraph">
 <p>For consistent representation of dates. Based on RFC-3339, for example 1996-12-19, see <a href="https://github.com/graphql-java/graphql-java-extended-scalars" class="bare">https://github.com/graphql-java/graphql-java-extended-scalars</a> for example implementation</p>
 </div>
@@ -1165,7 +1207,7 @@ However, the CDP specification is also handling other value types in a similar f
 </div>
 </div>
 <div class="sect3">
-<h4 id="_time">4.1.3. Time</h4>
+<h4 id="_time">4.2.3. Time</h4>
 <div class="paragraph">
 <p>For consistent representation of time. Based on RFC-3339, for example 16:39:57-08:00, see <a href="https://github.com/graphql-java/graphql-java-extended-scalars" class="bare">https://github.com/graphql-java/graphql-java-extended-scalars</a> for example implementation</p>
 </div>
@@ -1176,7 +1218,7 @@ However, the CDP specification is also handling other value types in a similar f
 </div>
 </div>
 <div class="sect3">
-<h4 id="_datetime">4.1.4. DateTime</h4>
+<h4 id="_datetime">4.2.4. DateTime</h4>
 <div class="paragraph">
 <p>For consistent representation of date and time. Based on RFC-3339, for example 1996-12-19T16:39:57-08:00, see <a href="https://github.com/graphql-java/graphql-java-extended-scalars" class="bare">https://github.com/graphql-java/graphql-java-extended-scalars</a> for example implementation</p>
 </div>
@@ -1187,7 +1229,7 @@ However, the CDP specification is also handling other value types in a similar f
 </div>
 </div>
 <div class="sect3">
-<h4 id="_geopoint">4.1.5. GeoPoint</h4>
+<h4 id="_geopoint">4.2.5. GeoPoint</h4>
 <div class="paragraph">
 <p>Uses a string representation of lat,lon</p>
 </div>
@@ -1199,7 +1241,7 @@ However, the CDP specification is also handling other value types in a similar f
 </div>
 </div>
 <div class="sect2">
-<h3 id="_properties">4.2. Properties</h3>
+<h3 id="_properties">4.3. Properties</h3>
 <div class="paragraph">
 <p>To properly store and query data CDP needs a way to describe the data dynamically.</p>
 </div>
@@ -1232,7 +1274,10 @@ Each property has a specific valueType to limit what kind of values it may hold,
 <p>arrayOfStrings([String]) : ["This", "is", "nice"]</p>
 </li>
 <li>
-<p>setOfProperties(Set) : {prompt : "hello", response : "yo"}</p>
+<p>setOfProperties(Set) : {"prompt" : "hello", "response" : "yo"}</p>
+</li>
+<li>
+<p>arrayOfSet([Set]) : [{"name1": "value1", "name2" : "value2"}], [{"name1": "value1", "name2" : "value2"}]</p>
 </li>
 </ul>
 </div>
@@ -1242,6 +1287,9 @@ Each property has a specific valueType to limit what kind of values it may hold,
 <div class="paragraph">
 <p>The Set value type is special, as it enables nested properties and a tree-structure of properties.
 I.e. from the example above: "setOfProperties.response" would hold the value "yo"</p>
+</div>
+<div class="paragraph">
+<p>The arrayOfSet given as an example above is simply a Set property type with multiple values (see occurrences defined below).</p>
 </div>
 <div class="paragraph">
 <p>A property consists of:</p>
@@ -1264,6 +1312,10 @@ I.e. from the example above: "setOfProperties.response" would hold the value "yo
 <dd>
 <p>Maximum number of values per property</p>
 </dd>
+<dt class="hdlist1">Tags</dt>
+<dd>
+<p>A tag may be used to annotate the property with metadata information such as "personalData", "requiredReadAuthorization".</p>
+</dd>
 </dl>
 </div>
 <div class="paragraph">
@@ -1271,7 +1323,7 @@ I.e. from the example above: "setOfProperties.response" would hold the value "yo
 the API is dynamically updated when properties are added or changed.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_property">4.2.1. CDP_Property</h4>
+<h4 id="_cdp_propertyinterface">4.3.1. CDP_PropertyInterface</h4>
 <div class="paragraph">
 <p>The property interface defines the common fields for the different value types.</p>
 </div>
@@ -1307,10 +1359,13 @@ the API is dynamically updated when properties are added or changed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_propertyinput">4.2.2. CDP_PropertyInput</h4>
+<h4 id="_cdp_propertyinput">4.3.2. CDP_PropertyInput</h4>
 <div class="paragraph">
-<p>This type is a workaround for missing inheritance in GraphQL.
-Only one field may be used at a time, all other fields must be null.</p>
+<p>A property type may have different values types, but due to a limitation of GraphQL Input types it is not possible to
+represent this using type inheritance. As a workaround, an input type containing all possible value types is used
+instead, and only one of these fields is allowed to have a value corresponding to the declared property value type. All
+other value fields must be null. It is REQUIRED that implementations check for this and return an error if invalid
+values are passed.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1329,7 +1384,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_booleanproperty">4.2.3. CDP_BooleanProperty</h4>
+<h4 id="_cdp_booleanproperty">4.3.3. CDP_BooleanProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_BooleanProperty implements CDP_PropertyInterface {
@@ -1343,7 +1398,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_booleanpropertyinput">4.2.4. CDP_BooleanPropertyInput</h4>
+<h4 id="_cdp_booleanpropertyinput">4.3.4. CDP_BooleanPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_BooleanPropertyInput {
@@ -1357,7 +1412,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_dateproperty">4.2.5. CDP_DateProperty</h4>
+<h4 id="_cdp_dateproperty">4.3.5. CDP_DateProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_DateProperty implements CDP_PropertyInterface {
@@ -1371,7 +1426,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_datepropertyinput">4.2.6. CDP_DatePropertyInput</h4>
+<h4 id="_cdp_datepropertyinput">4.3.6. CDP_DatePropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_DatePropertyInput {
@@ -1385,7 +1440,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_enumproperty">4.2.7. CDP_EnumProperty</h4>
+<h4 id="_cdp_enumproperty">4.3.7. CDP_EnumProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_EnumProperty implements CDP_PropertyInterface {
@@ -1399,7 +1454,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_enumpropertyinput">4.2.8. CDP_EnumPropertyInput</h4>
+<h4 id="_cdp_enumpropertyinput">4.3.8. CDP_EnumPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_EnumPropertyInput {
@@ -1413,7 +1468,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_floatproperty">4.2.9. CDP_FloatProperty</h4>
+<h4 id="_cdp_floatproperty">4.3.9. CDP_FloatProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_FloatProperty implements CDP_PropertyInterface {
@@ -1429,7 +1484,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_floatpropertyinput">4.2.10. CDP_FloatPropertyInput</h4>
+<h4 id="_cdp_floatpropertyinput">4.3.10. CDP_FloatPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_FloatPropertyInput {
@@ -1445,7 +1500,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_geopointproperty">4.2.11. CDP_GeoPointProperty</h4>
+<h4 id="_cdp_geopointproperty">4.3.11. CDP_GeoPointProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_GeoPointProperty implements CDP_PropertyInterface {
@@ -1459,7 +1514,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_geopointpropertyinput">4.2.12. CDP_GeoPointPropertyInput</h4>
+<h4 id="_cdp_geopointpropertyinput">4.3.12. CDP_GeoPointPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_GeoPointPropertyInput {
@@ -1473,7 +1528,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_identifierproperty">4.2.13. CDP_IdentifierProperty</h4>
+<h4 id="_cdp_identifierproperty">4.3.13. CDP_IdentifierProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_IdentifierProperty implements CDP_PropertyInterface {
@@ -1488,7 +1543,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_identifierpropertyinput">4.2.14. CDP_IdentifierPropertyInput</h4>
+<h4 id="_cdp_identifierpropertyinput">4.3.14. CDP_IdentifierPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_IdentifierPropertyInput {
@@ -1503,7 +1558,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_intproperty">4.2.15. CDP_IntProperty</h4>
+<h4 id="_cdp_intproperty">4.3.15. CDP_IntProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_IntProperty implements CDP_PropertyInterface {
@@ -1519,7 +1574,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_intpropertyinput">4.2.16. CDP_IntPropertyInput</h4>
+<h4 id="_cdp_intpropertyinput">4.3.16. CDP_IntPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_IntPropertyInput {
@@ -1535,7 +1590,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_stringproperty">4.2.17. CDP_StringProperty</h4>
+<h4 id="_cdp_stringproperty">4.3.17. CDP_StringProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_StringProperty implements CDP_PropertyInterface {
@@ -1550,7 +1605,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_stringpropertyinput">4.2.18. CDP_StringPropertyInput</h4>
+<h4 id="_cdp_stringpropertyinput">4.3.18. CDP_StringPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_StringPropertyInput {
@@ -1565,7 +1620,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_setproperty">4.2.19. CDP_SetProperty</h4>
+<h4 id="_cdp_setproperty">4.3.19. CDP_SetProperty</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_SetProperty implements CDP_PropertyInterface {
@@ -1579,7 +1634,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_setpropertyinput">4.2.20. CDP_SetPropertyInput</h4>
+<h4 id="_cdp_setpropertyinput">4.3.20. CDP_SetPropertyInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_SetPropertyInput {
@@ -1594,7 +1649,7 @@ Only one field may be used at a time, all other fields must be null.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_filters">4.3. Filters</h3>
+<h3 id="_filters">4.4. Filters</h3>
 <div class="paragraph">
 <p>Filters are widely used in CDP, and enable querying profiles, events, and other CDP objects.
 Filters are designed to be easy to use for administrators and marketeers in visual user interfaces, but also in terms of technical implementation.</p>
@@ -1822,7 +1877,7 @@ firstName_regexp (OPTIONAL)</pre>
 is defined in the specification, but implementations are free to offer more advanced operators for this type.</p>
 </div>
 <div class="sect3">
-<h4 id="_ordering">4.3.1. Ordering</h4>
+<h4 id="_ordering">4.4.1. Ordering</h4>
 <div class="paragraph">
 <p>OrderBy is used in combination with filters and lets you sort the result based on properties available for the returned objects.</p>
 </div>
@@ -1840,7 +1895,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_sortorder">4.3.2. CDP_SortOrder</h4>
+<h4 id="_cdp_sortorder">4.4.2. CDP_SortOrder</h4>
 <div class="paragraph">
 <p>Enumeration of allowed sorting operators</p>
 </div>
@@ -1855,7 +1910,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_orderbyinput">4.3.3. CDP_OrderByInput</h4>
+<h4 id="_cdp_orderbyinput">4.4.3. CDP_OrderByInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_OrderByInput {
@@ -1874,7 +1929,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_datefilter">4.3.4. CDP_DateFilter</h4>
+<h4 id="_cdp_datefilter">4.4.4. CDP_DateFilter</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_DateFilter {
@@ -1887,7 +1942,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_datefilterinput">4.3.5. CDP_DateFilterInput</h4>
+<h4 id="_cdp_datefilterinput">4.4.5. CDP_DateFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_DateFilterInput {
@@ -1900,7 +1955,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_geodistancefilterunit">4.3.6. CDP_GeoDistanceFilterUnit</h4>
+<h4 id="_cdp_geodistancefilterunit">4.4.6. CDP_GeoDistanceFilterUnit</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">enum CDP_GeoDistanceFilterUnit {
@@ -1912,7 +1967,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_geodistancefilter">4.3.7. CDP_GeoDistanceFilter</h4>
+<h4 id="_cdp_geodistancefilter">4.4.7. CDP_GeoDistanceFilter</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_GeoDistanceFilter {
@@ -1924,7 +1979,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_geodistancefilterinput">4.3.8. CDP_GeoDistanceFilterInput</h4>
+<h4 id="_cdp_geodistancefilterinput">4.4.8. CDP_GeoDistanceFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_GeoDistanceFilterInput {
@@ -1937,7 +1992,7 @@ is defined in the specification, but implementations are free to offer more adva
 </div>
 </div>
 <div class="sect2">
-<h3 id="_clients">4.4. Clients</h3>
+<h3 id="_clients">4.5. Clients</h3>
 <div class="paragraph">
 <p>The CDP GraphQL API should only be accessible for specific authorized clients.</p>
 </div>
@@ -1979,7 +2034,7 @@ For any CDP implementation, a Client MUST be defined for it to access the API.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_cdp_client">4.4.1. CDP_Client</h4>
+<h4 id="_cdp_client">4.5.1. CDP_Client</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_Client {
@@ -1989,9 +2044,20 @@ For any CDP implementation, a Client MUST be defined for it to access the API.
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_cdp_clientinput">4.5.2. CDP_ClientInput</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ClientInput {
+    id : ID!
+    title : String
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_sources">4.5. Sources</h3>
+<h3 id="_sources">4.6. Sources</h3>
 <div class="paragraph">
 <p>Sources are optional, but represent a way to identify the exact origin of events within a client.
 For instance, a web tracking script may track visitors across many different sites, but treat each site as a source.
@@ -2001,7 +2067,7 @@ As such, sources are comparable to siteID&#8217;s in Google Analytics.</p>
 <p>Sources may be reused across clients as desired.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_source">4.5.1. CDP_Source</h4>
+<h4 id="_cdp_source">4.6.1. CDP_Source</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_Source {
@@ -2012,7 +2078,7 @@ As such, sources are comparable to siteID&#8217;s in Google Analytics.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_sourceinput">4.5.2. CDP_SourceInput</h4>
+<h4 id="_cdp_sourceinput">4.6.2. CDP_SourceInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_SourceInput {
@@ -2035,7 +2101,7 @@ As such, sources are comparable to siteID&#8217;s in Google Analytics.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query">4.5.3. CDP_Query</h4>
+<h4 id="_cdp_query">4.6.3. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">Source related queries</div>
 <div class="content">
@@ -2044,7 +2110,7 @@ As such, sources are comparable to siteID&#8217;s in Google Analytics.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation">4.5.4. CDP_Mutation</h4>
+<h4 id="_cdp_mutation">4.6.4. CDP_Mutation</h4>
 <div class="listingblock">
 <div class="title">Source related mutations</div>
 <div class="content">
@@ -2055,7 +2121,7 @@ As such, sources are comparable to siteID&#8217;s in Google Analytics.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_objects">4.6. Objects</h3>
+<h3 id="_objects">4.7. Objects</h3>
 <div class="paragraph">
 <p>Objects are representations of anything users interact with. For example: a web page, a product or another person.
 Objects are used in <a href="#_events">Events</a> to specify what the <a href="#_profiles">Profiles</a> are interacting with. Objects are also used in <a href="#_optimizations">Optimizations</a>.</p>
@@ -2066,7 +2132,7 @@ Collections are used to classify objects.
 By placing objects into collections, optimizations may execute on a reduced data set (i.e. : recommending products).</p>
 </div>
 <div class="sect3">
-<h4 id="_uris">4.6.1. URIs</h4>
+<h4 id="_uris">4.7.1. URIs</h4>
 <div class="paragraph">
 <p>Objects are identified globally using URIs, that follow the URI specification (<a href="https://tools.ietf.org/html/rfc3986" class="bare">https://tools.ietf.org/html/rfc3986</a>).
 Internal CDP objects may be referenced using reserved schemes, that each have their associated syntax:</p>
@@ -2092,7 +2158,7 @@ Internal CDP objects may be referenced using reserved schemes, that each have th
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_object">4.6.2. CDP_Object</h4>
+<h4 id="_cdp_object">4.7.2. CDP_Object</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_Object {
@@ -2117,7 +2183,7 @@ Internal CDP objects may be referenced using reserved schemes, that each have th
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_objectinput">4.6.3. CDP_ObjectInput</h4>
+<h4 id="_cdp_objectinput">4.7.3. CDP_ObjectInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ObjectInput {
@@ -2128,7 +2194,7 @@ Internal CDP objects may be referenced using reserved schemes, that each have th
 </div>
 </div>
 <div class="sect2">
-<h3 id="_events">4.7. Events</h3>
+<h3 id="_events">4.8. Events</h3>
 <div class="paragraph">
 <p>Events are what drives the Customer Data Platform forward.
 Events are collected from different Clients, such as a specific website, beacons, commerce systems or a CRM.</p>
@@ -2154,7 +2220,7 @@ Sources provide a way to identify the exact origin of the events beyond the clie
 As such, sources are comparable to siteID&#8217;s in Google Analytics.</p>
 </div>
 <div class="sect3">
-<h4 id="_eventtypes">4.7.1. EventTypes</h4>
+<h4 id="_eventtypes">4.8.1. EventTypes</h4>
 <div class="paragraph">
 <p>Events must always be of a specific type.
 CDP implementations must implement a set of standard EventTypes, any other EventTypes are implementation specific.</p>
@@ -2180,13 +2246,40 @@ EventType fields MUST match the CDP propertyType format, and its underlying valu
 </table>
 </div>
 <div class="paragraph">
+<p>When custom EventTypes are registered in a server, new corresponding fields will be added to the in the <a href="#_cdp_eventinput">CDP_EventInput</a>
+ type and the convention is that the field name is the same as the type name but starting with a lowercase character
+ instead of an uppercase one.</p>
+</div>
+<div class="paragraph">
+<p>Custom output event types must also inherit from the CDP_EventInterface interface.</p>
+</div>
+<div class="paragraph">
 <p>Below are examples of what custom EventTypes might look like, we used VENDOR as prefix, since it is recommended to avoid
 conflicts with other types:</p>
 </div>
 <div class="listingblock">
 <div class="title">Sample EventType for Page Views</div>
 <div class="content">
-<pre class="highlight"><code class="language-GraphQL" data-lang="GraphQL">input VENDOR_PageViewEvent {
+<pre class="highlight"><code class="language-GraphQL" data-lang="GraphQL">input VENDOR_PageViewEventInput {
+  pageID : String,
+  language : String,
+  pageUrl : String,
+  referrer : String,
+  userAgent : String
+}
+
+type VENDOR_PageViewEvent implements CDP_EventInterface {
+  # The following fields come from the EventInterface
+  id: ID!
+  cdp_source : CDP_Source
+  cdp_client : CDP_Client
+  cdp_profileID: CDP_ProfileID!
+  cdp_profile : CDP_Profile!
+  cdp_object: CDP_Object!
+  cdp_location: GeoPoint
+  cdp_timestamp: DateTime
+  cdp_topics : [CDP_Topic]
+  # The following fields are specific to this event type
   pageID : String,
   language : String,
   pageUrl : String,
@@ -2195,10 +2288,56 @@ conflicts with other types:</p>
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>The <a href="#_cdp_eventinput">CDP_EventInput</a> type will therefore modified to add the new event type-specific field.</p>
+</div>
+<div class="listingblock">
+<div class="title">Sample EventType for Page Views</div>
+<div class="content">
+<pre class="highlight"><code class="language-GraphQL" data-lang="GraphQL">input CDP_EventInput {
+  id: ID
+  cdp_sourceID : String
+  cdp_profileID: CDP_ProfileIDInput!
+  cdp_objectID: ID!
+  cdp_location: GeoPoint
+  cdp_timestamp: DateTime
+  cdp_topics : [ID]
+  cdp_profileUpdateEvent : CDP_ProfileUpdateEventInput
+  cdp_consentUpdateEvent : CDP_ConsentUpdateEventInput
+  cdp_listsUpdateEvent : CDP_ListsUpdateEventInput
+  cdp_sessionEvent : CDP_SessionEventInput
+
+  vENDORPageViewEvent : VENDOR_PageViewEventInput # note the lowercase v as a convention as well as the absence of the "Input" suffix.
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the event types are defined (in an implementation-specific manner), they can be sent using the <code>processEvents</code>
+mutation field that uses the <a href="#_cdp_eventinput">CDP_EventInput</a> type and queried using the <code>findEvents</code> query field</p>
+</div>
 <div class="listingblock">
 <div class="title">Sample EventType for CRM updates</div>
 <div class="content">
-<pre class="highlight"><code class="language-javascript" data-lang="javascript">input VENDOR_crmLeadEvent {
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">input VENDOR_CrmLeadEventInput {
+  leadStatus : String,
+  leadID : String,
+  firstName : String,
+  lastName : String,
+  email : String
+}
+
+type VENDOR_CrmLeadEvent implements CDP_EventInterface {
+  # The following fields come from the EventInterface
+  id: ID!
+  cdp_source : CDP_Source
+  cdp_client : CDP_Client
+  cdp_profileID: CDP_ProfileID!
+  cdp_profile : CDP_Profile!
+  cdp_object: CDP_Object!
+  cdp_location: GeoPoint
+  cdp_timestamp: DateTime
+  cdp_topics : [CDP_Topic]
+  # The following fields are specific to this event type
   leadStatus : String,
   leadID : String,
   firstName : String,
@@ -2206,6 +2345,10 @@ conflicts with other types:</p>
   email : String
 }</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>The <a href="#_cdp_eventinput">CDP_EventInput</a> type will also have a new field called <code>vENDOR_CrmLeadEvent : VENDOR_CrmLeadEventInput</code> as in the
+previous example.</p>
 </div>
 <div class="paragraph">
 <p>Standard event types:</p>
@@ -2286,7 +2429,7 @@ conflicts with other types:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_eventinterface">4.7.2. CDP_EventInterface</h4>
+<h4 id="_cdp_eventinterface">4.8.2. CDP_EventInterface</h4>
 <div class="paragraph">
 <p>Events make use of type inheritance.
 To avoid name space conflicts, all standard event fields are prefixed with ´´_´´.</p>
@@ -2308,7 +2451,7 @@ To avoid name space conflicts, all standard event fields are prefixed with ´´_
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_eventinput">4.7.3. CDP_EventInput</h4>
+<h4 id="_cdp_eventinput">4.8.3. CDP_EventInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_EventInput {
@@ -2332,7 +2475,7 @@ To avoid name space conflicts, all standard event fields are prefixed with ´´_
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query_2">4.7.4. CDP_Query</h4>
+<h4 id="_cdp_query_2">4.8.4. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">Event queries</div>
 <div class="content">
@@ -2342,7 +2485,7 @@ To avoid name space conflicts, all standard event fields are prefixed with ´´_
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation_2">4.7.5. CDP_Mutation</h4>
+<h4 id="_cdp_mutation_2">4.8.5. CDP_Mutation</h4>
 <div class="listingblock">
 <div class="title">Event mutations</div>
 <div class="content">
@@ -2351,7 +2494,7 @@ To avoid name space conflicts, all standard event fields are prefixed with ´´_
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_subscriptions">4.7.6. CDP_Subscriptions</h4>
+<h4 id="_cdp_subscriptions">4.8.6. CDP_Subscriptions</h4>
 <div class="listingblock">
 <div class="title">Event subscriptions</div>
 <div class="content">
@@ -2360,7 +2503,7 @@ To avoid name space conflicts, all standard event fields are prefixed with ´´_
 </div>
 </div>
 <div class="sect3">
-<h4 id="_event_processing_sample">4.7.7. Event processing sample</h4>
+<h4 id="_event_processing_sample">4.8.7. Event processing sample</h4>
 <div class="listingblock">
 <div class="title">Mutation</div>
 <div class="content">
@@ -2391,7 +2534,7 @@ To avoid name space conflicts, all standard event fields are prefixed with ´´_
 </div>
 </div>
 <div class="sect2">
-<h3 id="_eventfilters">4.8. EventFilters</h3>
+<h3 id="_eventfilters">4.9. EventFilters</h3>
 <div class="paragraph">
 <p>EventFilters are a specific version of filters for querying events.</p>
 </div>
@@ -2439,7 +2582,7 @@ ending with <code>d</code> within the last 30 days.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_eventfilter">4.8.1. CDP_EventFilter</h4>
+<h4 id="_cdp_eventfilter">4.9.1. CDP_EventFilter</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_EventFilter {
@@ -2467,7 +2610,7 @@ ending with <code>d</code> within the last 30 days.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_eventfilterinput">4.8.2. CDP_EventFilterInput</h4>
+<h4 id="_cdp_eventfilterinput">4.9.2. CDP_EventFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_EventFilterInput {
@@ -2495,7 +2638,7 @@ ending with <code>d</code> within the last 30 days.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_profiles">4.9. Profiles</h3>
+<h3 id="_profiles">4.10. Profiles</h3>
 <div class="paragraph">
 <p>Profiles are in many ways the holy grail of CDP.
 The Customer Data Platform dynamically creates and build profiles from events that occur over time.</p>
@@ -2510,7 +2653,7 @@ The Customer Data Platform dynamically creates and build profiles from events th
 <p>The Customer Data Platform is responsible for building profiles based on the provided identifiers and the stream of events coming from each Client.</p>
 </div>
 <div class="sect3">
-<h4 id="_profile_properties">4.9.1. Profile properties</h4>
+<h4 id="_profile_properties">4.10.1. Profile properties</h4>
 <div class="paragraph">
 <p>Each deployment of CDP will be unique in how data are collected, and what data is stored per profile.
 Profile properties enable us to define custom properties required by an organization.</p>
@@ -2729,7 +2872,7 @@ suffix to them. This will always happen and implementations MUST do this.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_profile_merges">4.9.2. Profile merges</h4>
+<h4 id="_profile_merges">4.10.2. Profile merges</h4>
 <div class="paragraph">
 <p>Customer Data Platforms implementations MUST support profile merges.</p>
 </div>
@@ -2754,7 +2897,15 @@ The original profiles that were merged may be flagged or deleted, this is implem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileid">4.9.3. CDP_ProfileID</h4>
+<h4 id="_deleting_profile_personal_data_aka_profile_anonymizing">4.10.3. Deleting profile personal data (aka profile anonymizing)</h4>
+<div class="paragraph">
+<p>The API provides a way to delete personal data associated with a profile. The effect of this operation is not specified
+in details but it should respect existing privacy laws such as GDPR. For example, it could remove all properties flagged
+as containing personal data and/or it could even process events in ways to anonymize data.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cdp_profileid">4.10.4. CDP_ProfileID</h4>
 <div class="paragraph">
 <p>Profiles are created from a client. As such, each profile has a composite key based on a unique ID within that client, and the client.</p>
 </div>
@@ -2769,7 +2920,7 @@ The original profiles that were merged may be flagged or deleted, this is implem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileidinput">4.9.4. CDP_ProfileIDInput</h4>
+<h4 id="_cdp_profileidinput">4.10.5. CDP_ProfileIDInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ProfileIDInput {
@@ -2787,7 +2938,7 @@ The original profiles that were merged may be flagged or deleted, this is implem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileinterface">4.9.5. CDP_ProfileInterface</h4>
+<h4 id="_cdp_profileinterface">4.10.6. CDP_ProfileInterface</h4>
 <div class="paragraph">
 <p>Common interface for <a href="#_profiles">Profiles</a> and <a href="#_personas">Personas</a></p>
 </div>
@@ -2812,7 +2963,7 @@ The original profiles that were merged may be flagged or deleted, this is implem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profile">4.9.6. CDP_Profile</h4>
+<h4 id="_cdp_profile">4.10.7. CDP_Profile</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_Profile implements CDP_ProfileInterface {
@@ -2832,7 +2983,7 @@ The original profiles that were merged may be flagged or deleted, this is implem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileupdateevent">4.9.7. CDP_ProfileUpdateEvent</h4>
+<h4 id="_cdp_profileupdateevent">4.10.8. CDP_ProfileUpdateEvent</h4>
 <div class="paragraph">
 <p>Profiles are crated and updated through this event type.
 This event is part of the standard and MUST be available for any implementation of the specification.</p>
@@ -2855,7 +3006,7 @@ This event is part of the standard and MUST be available for any implementation 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileupdateeventinput">4.9.8. CDP_ProfileUpdateEventInput</h4>
+<h4 id="_cdp_profileupdateeventinput">4.10.9. CDP_ProfileUpdateEventInput</h4>
 <div class="paragraph">
 <p>This is the input equivalent, notice because of missing input type inheritance in GraphQL,
 it only contains the actual properties to update.</p>
@@ -2893,7 +3044,7 @@ it only contains the actual properties to update.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileupdateeventfilter">4.9.9. CDP_ProfileUpdateEventFilter</h4>
+<h4 id="_cdp_profileupdateeventfilter">4.10.10. CDP_ProfileUpdateEventFilter</h4>
 <div class="listingblock">
 <div class="title">Sample ProfileUpdateEventFilter</div>
 <div class="content">
@@ -2906,7 +3057,7 @@ it only contains the actual properties to update.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileupdateeventfilterinput">4.9.10. CDP_ProfileUpdateEventFilterInput</h4>
+<h4 id="_cdp_profileupdateeventfilterinput">4.10.11. CDP_ProfileUpdateEventFilterInput</h4>
 <div class="listingblock">
 <div class="title">Sample ProfileUpdateEventFilterInput</div>
 <div class="content">
@@ -2919,7 +3070,7 @@ it only contains the actual properties to update.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query_3">4.9.11. CDP_Query</h4>
+<h4 id="_cdp_query_3">4.10.12. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">Profile queries</div>
 <div class="content">
@@ -2930,28 +3081,33 @@ it only contains the actual properties to update.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation_3">4.9.12. CDP_Mutation</h4>
+<h4 id="_cdp_mutation_3">4.10.13. CDP_Mutation</h4>
+<div class="paragraph">
+<p>The profile property mutation fields (createOrUpdateProfileProperties, deleteProfileProperties) are OPTIONAL
+(see <a href="#_conformance">Conformance</a> section).</p>
+</div>
 <div class="listingblock">
 <div class="title">Profile mutations</div>
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">  createOrUpdateProfileProperties(properties : [CDP_PropertyInput]) : Boolean
   deleteProfileProperties(propertyNames : [ID]!) : Boolean
-  deleteProfile(profileID : CDP_ProfileIDInput) : CDP_Profile</code></pre>
+  deleteProfile(profileID : CDP_ProfileIDInput) : CDP_Profile
+  deleteAllPersonalData(profileID : CDP_ProfileIDInput) : Boolean</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_subscription">4.9.13. CDP_Subscription</h4>
+<h4 id="_cdp_subscription">4.10.14. CDP_Subscription</h4>
 <div class="listingblock">
 <div class="title">Profile subscriptions</div>
 <div class="content">
-<pre class="highlight"><code class="language-graphql" data-lang="graphql">  profileListener(filter: CDP_ProfileFilterInput) : CDP_Profile</code></pre>
+<pre class="highlight"><code class="language-graphql" data-lang="graphql">extend type CDP_Subscription {</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_profilefilters">4.10. ProfileFilters</h3>
+<h3 id="_profilefilters">4.11. ProfileFilters</h3>
 <div class="paragraph">
 <p>Profile Filters are slightly more complex than <a href="#_eventfilters">EventFilters</a>.
 As profileFilter are composed from both searching profile properties, and events related to the profile.</p>
@@ -3012,7 +3168,7 @@ id NEWSLETTER-LIST-ID since June 28th, 2018 at 5:25"</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profilefilter">4.10.1. CDP_ProfileFilter</h4>
+<h4 id="_cdp_profilefilter">4.11.1. CDP_ProfileFilter</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_ProfileFilter {
@@ -3028,7 +3184,7 @@ id NEWSLETTER-LIST-ID since June 28th, 2018 at 5:25"</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profilefilterinput">4.10.2. CDP_ProfileFilterInput</h4>
+<h4 id="_cdp_profilefilterinput">4.11.2. CDP_ProfileFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ProfileFilterInput {
@@ -3044,7 +3200,7 @@ id NEWSLETTER-LIST-ID since June 28th, 2018 at 5:25"</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profilepropertiesfilter">4.10.3. CDP_ProfilePropertiesFilter</h4>
+<h4 id="_cdp_profilepropertiesfilter">4.11.3. CDP_ProfilePropertiesFilter</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_ProfilePropertiesFilter {
@@ -3056,7 +3212,7 @@ id NEWSLETTER-LIST-ID since June 28th, 2018 at 5:25"</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profilepropertiesfilterinput">4.10.4. CDP_ProfilePropertiesFilterInput</h4>
+<h4 id="_cdp_profilepropertiesfilterinput">4.11.4. CDP_ProfilePropertiesFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ProfilePropertiesFilterInput {
@@ -3068,7 +3224,7 @@ id NEWSLETTER-LIST-ID since June 28th, 2018 at 5:25"</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileeventsfilter">4.10.5. CDP_ProfileEventsFilter</h4>
+<h4 id="_cdp_profileeventsfilter">4.11.5. CDP_ProfileEventsFilter</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_ProfileEventsFilter {
@@ -3083,7 +3239,7 @@ id NEWSLETTER-LIST-ID since June 28th, 2018 at 5:25"</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_profileeventsfilterinput">4.10.6. CDP_ProfileEventsFilterInput</h4>
+<h4 id="_cdp_profileeventsfilterinput">4.11.6. CDP_ProfileEventsFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ProfileEventsFilterInput {
@@ -3099,7 +3255,7 @@ id NEWSLETTER-LIST-ID since June 28th, 2018 at 5:25"</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sessions">4.11. Sessions</h3>
+<h3 id="_sessions">4.12. Sessions</h3>
 <div class="paragraph">
 <p>When individuals interact, clients may enrich the data associated with interaction by specifying sessions.
 For instance, a session may start when a user loads a specific app, and end when he closes it.</p>
@@ -3108,7 +3264,7 @@ For instance, a session may start when a user loads a specific app, and end when
 <p>The CDP_SessionEventInput is used to signify the beginning, pause, resume or end of a session.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_sessionstate">4.11.1. CDP_SessionState</h4>
+<h4 id="_cdp_sessionstate">4.12.1. CDP_SessionState</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">enum CDP_SessionState {
@@ -3121,7 +3277,7 @@ For instance, a session may start when a user loads a specific app, and end when
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_sessionevent">4.11.2. CDP_SessionEvent</h4>
+<h4 id="_cdp_sessionevent">4.12.2. CDP_SessionEvent</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_SessionEvent implements CDP_EventInterface {
@@ -3140,7 +3296,7 @@ For instance, a session may start when a user loads a specific app, and end when
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_sessioneventinput">4.11.3. CDP_SessionEventInput</h4>
+<h4 id="_cdp_sessioneventinput">4.12.3. CDP_SessionEventInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_SessionEventInput {
@@ -3181,9 +3337,35 @@ For instance, a session may start when a user loads a specific app, and end when
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_cdp_sessioneventfilter">4.12.4. CDP_SessionEventFilter</h4>
+<div class="paragraph">
+<p>This type is used in <a href="#_eventfilters">EventFilters</a> to filter session events</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_SessionEventFilter {
+  state_equals : CDP_SessionState
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cdp_sessioneventfilterinput">4.12.5. CDP_SessionEventFilterInput</h4>
+<div class="paragraph">
+<p>This type is used in <a href="#_eventfilters">EventFilters</a> to filter session events</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_SessionEventFilterInput {
+  state_equals : CDP_SessionState
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_consents">4.12. Consents</h3>
+<h3 id="_consents">4.13. Consents</h3>
 <div class="paragraph">
 <p>New legislation and stricter rules for use of personal data is already here (i.e. GDPR).
 As such, consents are inherently more important to ensure you are using and storing data in compliance with policies.</p>
@@ -3258,7 +3440,7 @@ recommended that implementations provide some mechanism to ease the pain of impl
 end-user disturbance.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_consentstatus">4.12.1. CDP_ConsentStatus</h4>
+<h4 id="_cdp_consentstatus">4.13.1. CDP_ConsentStatus</h4>
 <div class="paragraph">
 <p>Uniquely specifies the status of any given Consent</p>
 </div>
@@ -3273,7 +3455,7 @@ end-user disturbance.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_consent">4.12.2. CDP_Consent</h4>
+<h4 id="_cdp_consent">4.13.2. CDP_Consent</h4>
 <div class="paragraph">
 <p>CDP_Consent represents a persisted Consent, always attached to a specific profile.</p>
 </div>
@@ -3306,7 +3488,7 @@ end-user disturbance.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_consentupdateevent">4.12.3. CDP_ConsentUpdateEvent</h4>
+<h4 id="_cdp_consentupdateevent">4.13.3. CDP_ConsentUpdateEvent</h4>
 <div class="paragraph">
 <p>Standard EventType to create or update Consents.</p>
 </div>
@@ -3331,7 +3513,7 @@ end-user disturbance.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_consentupdateeventinput">4.12.4. CDP_ConsentUpdateEventInput</h4>
+<h4 id="_cdp_consentupdateeventinput">4.13.4. CDP_ConsentUpdateEventInput</h4>
 <div class="paragraph">
 <p>Input type for ConsentUpdateEvent</p>
 </div>
@@ -3382,7 +3564,7 @@ end-user disturbance.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_consentupdateeventfilter">4.12.5. CDP_ConsentUpdateEventFilter</h4>
+<h4 id="_cdp_consentupdateeventfilter">4.13.5. CDP_ConsentUpdateEventFilter</h4>
 <div class="paragraph">
 <p>Filter for ConsentUpdateEvents</p>
 </div>
@@ -3406,7 +3588,7 @@ end-user disturbance.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_consentupdateeventfilterinput">4.12.6. CDP_ConsentUpdateEventFilterInput</h4>
+<h4 id="_cdp_consentupdateeventfilterinput">4.13.6. CDP_ConsentUpdateEventFilterInput</h4>
 <div class="paragraph">
 <p>Input type for of ConsentUpdateEventsFilter</p>
 </div>
@@ -3431,7 +3613,7 @@ end-user disturbance.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_views">4.13. Views</h3>
+<h3 id="_views">4.14. Views</h3>
 <div class="paragraph">
 <p>Views provide a way of grouping administrative objects in the Customer Data Platform.
 <a href="#_profiles">Profiles</a>, <a href="#_events">Events</a> and <a href="#_consents">Consents</a> are all collected and stored globally,
@@ -3441,7 +3623,7 @@ but other items are typically handled by administrators or marketeers, and benef
 <p><a href="#_lists">Lists</a>, <a href="#_segments">Segments</a>, <a href="#_topics">Topics</a> and <a href="#_personas">Personas</a> are all tagged with Views.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_view">4.13.1. CDP_View</h4>
+<h4 id="_cdp_view">4.14.1. CDP_View</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_View {
@@ -3451,7 +3633,7 @@ but other items are typically handled by administrators or marketeers, and benef
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_viewinput">4.13.2. CDP_ViewInput</h4>
+<h4 id="_cdp_viewinput">4.14.2. CDP_ViewInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ViewInput {
@@ -3461,7 +3643,7 @@ but other items are typically handled by administrators or marketeers, and benef
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query_4">4.13.3. CDP_Query</h4>
+<h4 id="_cdp_query_4">4.14.3. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">View queries</div>
 <div class="content">
@@ -3470,7 +3652,7 @@ but other items are typically handled by administrators or marketeers, and benef
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation_4">4.13.4. CDP_Mutation</h4>
+<h4 id="_cdp_mutation_4">4.14.4. CDP_Mutation</h4>
 <div class="listingblock">
 <div class="title">View mutations</div>
 <div class="content">
@@ -3481,7 +3663,7 @@ but other items are typically handled by administrators or marketeers, and benef
 </div>
 </div>
 <div class="sect2">
-<h3 id="_topics">4.14. Topics</h3>
+<h3 id="_topics">4.15. Topics</h3>
 <div class="paragraph">
 <p>Topics represent the core entities of the business that is using the Customer Data Platform.
 The Customer Data Platform aims to find correlation between profiles and the topics.
@@ -3515,7 +3697,7 @@ The web tracking script can then feed this information back to the CDP, includin
 This way, the CDP will be able to build a model of association.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_topic">4.14.1. CDP_Topic</h4>
+<h4 id="_cdp_topic">4.15.1. CDP_Topic</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_Topic {
@@ -3527,7 +3709,7 @@ This way, the CDP will be able to build a model of association.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_topicinput">4.14.2. CDP_TopicInput</h4>
+<h4 id="_cdp_topicinput">4.15.2. CDP_TopicInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_TopicInput {
@@ -3539,7 +3721,7 @@ This way, the CDP will be able to build a model of association.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_topicfilterinput">4.14.3. CDP_TopicFilterInput</h4>
+<h4 id="_cdp_topicfilterinput">4.15.3. CDP_TopicFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_TopicFilterInput {
@@ -3553,7 +3735,7 @@ This way, the CDP will be able to build a model of association.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query_5">4.14.4. CDP_Query</h4>
+<h4 id="_cdp_query_5">4.15.4. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">Topic queries</div>
 <div class="content">
@@ -3563,7 +3745,7 @@ This way, the CDP will be able to build a model of association.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation_5">4.14.5. CDP_Mutation</h4>
+<h4 id="_cdp_mutation_5">4.15.5. CDP_Mutation</h4>
 <div class="listingblock">
 <div class="title">Topic mutations</div>
 <div class="content">
@@ -3574,7 +3756,7 @@ This way, the CDP will be able to build a model of association.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_interests">4.15. Interests</h3>
+<h3 id="_interests">4.16. Interests</h3>
 <div class="paragraph">
 <p>An important use-case for the Customer Data Platform is to determine a profile&#8217;s "Interests".
 Whenever the Customer Data Platform registers an events that are associated with one or more <a href="#_topics">Topics</a>, this will affect the profile&#8217;s interest for the specific Topic.
@@ -3604,7 +3786,7 @@ A profile&#8217;s interest for a specific topic is measured between 0-1, where 1
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_cdp_interest">4.15.1. CDP_Interest</h4>
+<h4 id="_cdp_interest">4.16.1. CDP_Interest</h4>
 <div class="paragraph">
 <p>Interests are calculated automatically based on implementation specific algorithm</p>
 </div>
@@ -3626,7 +3808,7 @@ A profile&#8217;s interest for a specific topic is measured between 0-1, where 1
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_interestinput">4.15.2. CDP_InterestInput</h4>
+<h4 id="_cdp_interestinput">4.16.2. CDP_InterestInput</h4>
 <div class="paragraph">
 <p>Specifying interest is only relevant for <a href="#_personas">Personas</a></p>
 </div>
@@ -3639,9 +3821,46 @@ A profile&#8217;s interest for a specific topic is measured between 0-1, where 1
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_cdp_interestfilter">4.16.3. CDP_InterestFilter</h4>
+<div class="paragraph">
+<p>Used to filter interests, mostly for administration purposes</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_InterestFilter {
+  and : [CDP_InterestFilter]
+  or : [CDP_InterestFilter]
+  topic_equals : ID
+  score_equals : Float
+  score_lt : Float
+  score_lte : Float
+  score_gt : Float
+  score_gte : Float
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cdp_interestfilterinput">4.16.4. CDP_InterestFilterInput</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_InterestFilterInput {
+  and : [CDP_InterestFilterInput]
+  or : [CDP_InterestFilterInput]
+  topic_equals : ID
+  score_equals : Float
+  score_lt : Float
+  score_lte : Float
+  score_gt : Float
+  score_gte : Float
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_personas">4.16. Personas</h3>
+<h3 id="_personas">4.17. Personas</h3>
 <div class="paragraph">
 <p>A persona is a concept used to personify your audience.
 This may for instance be used to test personalization and targeting of content in a 3rd party system.</p>
@@ -3690,7 +3909,7 @@ A common use-case would be testing personalized content in a CMS or a newsletter
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_persona">4.16.1. CDP_Persona</h4>
+<h4 id="_cdp_persona">4.17.1. CDP_Persona</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_Persona implements CDP_ProfileInterface {
@@ -3708,7 +3927,7 @@ A common use-case would be testing personalized content in a CMS or a newsletter
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_personainput">4.16.2. CDP_PersonaInput</h4>
+<h4 id="_cdp_personainput">4.17.2. CDP_PersonaInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_PersonaInput {
@@ -3725,7 +3944,7 @@ A common use-case would be testing personalized content in a CMS or a newsletter
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_personaconsentinput">4.16.3. CDP_PersonaConsentInput</h4>
+<h4 id="_cdp_personaconsentinput">4.17.3. CDP_PersonaConsentInput</h4>
 <div class="paragraph">
 <p>Special type to set PersonaConsent without the use of events</p>
 </div>
@@ -3741,7 +3960,7 @@ A common use-case would be testing personalized content in a CMS or a newsletter
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query_6">4.16.4. CDP_Query</h4>
+<h4 id="_cdp_query_6">4.17.4. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">Persona queries</div>
 <div class="content">
@@ -3751,7 +3970,7 @@ A common use-case would be testing personalized content in a CMS or a newsletter
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation_6">4.16.5. CDP_Mutation</h4>
+<h4 id="_cdp_mutation_6">4.17.5. CDP_Mutation</h4>
 <div class="listingblock">
 <div class="title">Persona mutations</div>
 <div class="content">
@@ -3762,7 +3981,7 @@ A common use-case would be testing personalized content in a CMS or a newsletter
 </div>
 </div>
 <div class="sect2">
-<h3 id="_lists">4.17. Lists</h3>
+<h3 id="_lists">4.18. Lists</h3>
 <div class="paragraph">
 <p>Lists are explicitly created and named in the Customer Data Platform. Profiles may then be added to a list, and later opt out if desired.
 Whenever a profile opts out of a list, that information will also be stored. This prevents the profile from accidentally being added back to the list at a later point.</p>
@@ -3771,7 +3990,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 <p>A common use-case for lists is creating a list for a campaign, and add the target profiles to the list as the campaign starts.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_list">4.17.1. CDP_List</h4>
+<h4 id="_cdp_list">4.18.1. CDP_List</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_List {
@@ -3793,7 +4012,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_listinput">4.17.2. CDP_ListInput</h4>
+<h4 id="_cdp_listinput">4.18.2. CDP_ListInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ListInput {
@@ -3805,7 +4024,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_listsupdateevent">4.17.3. CDP_ListsUpdateEvent</h4>
+<h4 id="_cdp_listsupdateevent">4.18.3. CDP_ListsUpdateEvent</h4>
 <div class="paragraph">
 <p>Standard Event to update profile membership for specified lists</p>
 </div>
@@ -3828,7 +4047,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_listsupdateeventinput">4.17.4. CDP_ListsUpdateEventInput</h4>
+<h4 id="_cdp_listsupdateeventinput">4.18.4. CDP_ListsUpdateEventInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ListsUpdateEventInput {
@@ -3872,7 +4091,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_listsupdateeventfilter">4.17.5. CDP_ListsUpdateEventFilter</h4>
+<h4 id="_cdp_listsupdateeventfilter">4.18.5. CDP_ListsUpdateEventFilter</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_ListsUpdateEventFilter {
@@ -3883,7 +4102,10 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_listsupdateeventfilterinput">4.17.6. CDP_ListsUpdateEventFilterInput</h4>
+<h4 id="_cdp_listsupdateeventfilterinput">4.18.6. CDP_ListsUpdateEventFilterInput</h4>
+<div class="paragraph">
+<p>Used to filter list update events when querying events</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ListsUpdateEventFilterInput {
@@ -3894,7 +4116,10 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_listsfilterinput">4.17.7. CDP_ListsFilterInput</h4>
+<h4 id="_cdp_listfilterinput">4.18.7. CDP_ListFilterInput</h4>
+<div class="paragraph">
+<p>Used to filter lists in for management purposes</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_ListFilterInput {
@@ -3907,7 +4132,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query_7">4.17.8. CDP_Query</h4>
+<h4 id="_cdp_query_7">4.18.8. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">List queries</div>
 <div class="content">
@@ -3917,7 +4142,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation_7">4.17.9. CDP_Mutation</h4>
+<h4 id="_cdp_mutation_7">4.18.9. CDP_Mutation</h4>
 <div class="listingblock">
 <div class="title">List mutations</div>
 <div class="content">
@@ -3930,7 +4155,7 @@ Whenever a profile opts out of a list, that information will also be stored. Thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_segments">4.18. Segments</h3>
+<h3 id="_segments">4.19. Segments</h3>
 <div class="paragraph">
 <p>Segments are similar to lists in that profiles may be in the segment, or not.
 However, where profiles are explicitly added to lists, they are dynamically resolved to segments based on the filter defined in the segment.</p>
@@ -3991,7 +4216,7 @@ However, where profiles are explicitly added to lists, they are dynamically reso
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_segment">4.18.1. CDP_Segment</h4>
+<h4 id="_cdp_segment">4.19.1. CDP_Segment</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">type CDP_Segment {
@@ -4004,7 +4229,7 @@ However, where profiles are explicitly added to lists, they are dynamically reso
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_segmentinput">4.18.2. CDP_SegmentInput</h4>
+<h4 id="_cdp_segmentinput">4.19.2. CDP_SegmentInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_SegmentInput {
@@ -4017,7 +4242,7 @@ However, where profiles are explicitly added to lists, they are dynamically reso
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_segmentfilterinput">4.18.3. CDP_SegmentFilterInput</h4>
+<h4 id="_cdp_segmentfilterinput">4.19.3. CDP_SegmentFilterInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_SegmentFilterInput {
@@ -4030,7 +4255,7 @@ However, where profiles are explicitly added to lists, they are dynamically reso
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_query_8">4.18.4. CDP_Query</h4>
+<h4 id="_cdp_query_8">4.19.4. CDP_Query</h4>
 <div class="listingblock">
 <div class="title">Segment queries</div>
 <div class="content">
@@ -4040,7 +4265,7 @@ However, where profiles are explicitly added to lists, they are dynamically reso
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_mutation_8">4.18.5. CDP_Mutation</h4>
+<h4 id="_cdp_mutation_8">4.19.5. CDP_Mutation</h4>
 <div class="listingblock">
 <div class="title">Segment mutations</div>
 <div class="content">
@@ -4051,13 +4276,13 @@ However, where profiles are explicitly added to lists, they are dynamically reso
 </div>
 </div>
 <div class="sect2">
-<h3 id="_profile_matching">4.19. Profile matching</h3>
+<h3 id="_profile_matching">4.20. Profile matching</h3>
 <div class="paragraph">
 <p>Clients may want to identify in real time if a given profile matches a specific segment, or filter.
 This can effectively used in order to produce personalized responses or messages.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_namedfilterinput">4.19.1. CDP_NamedFilterInput</h4>
+<h4 id="_cdp_namedfilterinput">4.20.1. CDP_NamedFilterInput</h4>
 <div class="paragraph">
 <p>Named filters are used to evaluate filters against a profile - useful for building personalized experiences</p>
 </div>
@@ -4071,7 +4296,7 @@ This can effectively used in order to produce personalized responses or messages
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_filtermatch">4.19.2. CDP_FilterMatch</h4>
+<h4 id="_cdp_filtermatch">4.20.2. CDP_FilterMatch</h4>
 <div class="paragraph">
 <p>The result of a named filter match request</p>
 </div>
@@ -4129,7 +4354,7 @@ This can effectively used in order to produce personalized responses or messages
 </div>
 </div>
 <div class="sect2">
-<h3 id="_data_intelligence">4.20. Data Intelligence</h3>
+<h3 id="_data_intelligence">4.21. Data Intelligence</h3>
 <div class="paragraph">
 <p>The collection of structured information in a CDP enables potential beyond simply accessing these data.
 By applying algorithms or machine learning techniques to the data,
@@ -4139,7 +4364,7 @@ a CDP can act as a real-time data source for advanced use cases in other applica
 <p>The collection of structured information in a CDP enables potential beyond simply accessing these data.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_scoredobject">4.20.1. CDP_ScoredObject</h4>
+<h4 id="_cdp_scoredobject">4.21.1. CDP_ScoredObject</h4>
 <div class="paragraph">
 <p>Objects with a specific scoring</p>
 </div>
@@ -4153,7 +4378,7 @@ a CDP can act as a real-time data source for advanced use cases in other applica
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_algorithminput">4.20.2. CDP_AlgorithmInput</h4>
+<h4 id="_cdp_algorithminput">4.21.2. CDP_AlgorithmInput</h4>
 <div class="paragraph">
 <p>Defining a specific algorithm to apply.</p>
 </div>
@@ -4180,7 +4405,7 @@ a CDP can act as a real-time data source for advanced use cases in other applica
 </div>
 </div>
 <div class="sect2">
-<h3 id="_optimizations">4.21. Optimizations</h3>
+<h3 id="_optimizations">4.22. Optimizations</h3>
 <div class="paragraph">
 <p>This part of the specification is OPTIONAL</p>
 </div>
@@ -4190,7 +4415,7 @@ In short, an optimization is done by passing a number of objects in, and letting
 For instance, which product is most relevant for a specific visitor.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_optimizationresult">4.21.1. CDP_OptimizationResult</h4>
+<h4 id="_cdp_optimizationresult">4.22.1. CDP_OptimizationResult</h4>
 <div class="paragraph">
 <p>The result of an optimization, containing scored objects</p>
 </div>
@@ -4204,7 +4429,7 @@ For instance, which product is most relevant for a specific visitor.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_optimizationinput">4.21.2. CDP_OptimizationInput</h4>
+<h4 id="_cdp_optimizationinput">4.22.2. CDP_OptimizationInput</h4>
 <div class="paragraph">
 <p>Definition of the optimization to perform</p>
 </div>
@@ -4229,7 +4454,7 @@ For instance, which product is most relevant for a specific visitor.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_eventoccurenceboostinput">4.21.3. CDP_EventOccurenceBoostInput</h4>
+<h4 id="_cdp_eventoccurenceboostinput">4.22.3. CDP_EventOccurenceBoostInput</h4>
 <div class="paragraph">
 <p>Used to boost positively/negatively the algorithm based on event type and time span: i.e. return a list of products the profile has viewed in the last year</p>
 </div>
@@ -4317,7 +4542,7 @@ For instance, which product is most relevant for a specific visitor.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_recommendations">4.22. Recommendations</h3>
+<h3 id="_recommendations">4.23. Recommendations</h3>
 <div class="paragraph">
 <p>This part of the specification is OPTIONAL</p>
 </div>
@@ -4326,7 +4551,7 @@ For instance, which product is most relevant for a specific visitor.</p>
 recommendations take an object as input, only to suggest other objects based on a specific algorithm.</p>
 </div>
 <div class="sect3">
-<h4 id="_cdp_recommendationresult">4.22.1. CDP_RecommendationResult</h4>
+<h4 id="_cdp_recommendationresult">4.23.1. CDP_RecommendationResult</h4>
 <div class="paragraph">
 <p>Provides a list of scored object</p>
 </div>
@@ -4340,7 +4565,7 @@ recommendations take an object as input, only to suggest other objects based on 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cdp_recommendationinput">4.22.2. CDP_RecommendationInput</h4>
+<h4 id="_cdp_recommendationinput">4.23.2. CDP_RecommendationInput</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-graphql" data-lang="graphql">input CDP_RecommendationInput {
@@ -4441,14 +4666,20 @@ Deliberately, the standard does not specify how the API is secured, as this can 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_client_tokens">5.2. Client tokens</h3>
+<h3 id="_network_communication">5.2. Network communication</h3>
+<div class="paragraph">
+<p>All communication going through a network, be it a local or global one, should be encrypted using latest recommended standards in the matter. In the case of the GraphQL API, it is highly recommended to use HTTPS connections to avoid man-in-the-middle attacks and eavesdropping. It is also not recommended that the GraphQL API be publicly and directly available, but only available to known and trusted clients.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_tokens">5.3. Client tokens</h3>
 <div class="paragraph">
 <p>Communicating with the API requires a valid <a href="#_clients">Client</a>.
 Implementers are strongly encouraged to use additional tokens or similar for securing the client access further.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_access_control">5.3. Access control</h3>
+<h3 id="_access_control">5.4. Access control</h3>
 <div class="paragraph">
 <p>By default, clients get access to all data stored in the CDP.</p>
 </div>
@@ -4459,7 +4690,7 @@ or allowing access to management objects, etc.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_authentication">5.4. Authentication</h3>
+<h3 id="_authentication">5.5. Authentication</h3>
 <div class="paragraph">
 <p>The specification does not set any requirements for authentication
 However, CDP specifies management objects that are intended to be created and handled by power-users and marketeers.</p>
@@ -4488,16 +4719,19 @@ Direct access from end user devices and other clients poses a higher risk of exp
 </div>
 </div>
 <div class="sect2">
-<h3 id="_audit_logs">5.5. Audit logs</h3>
+<h3 id="_audit_logs">5.6. Audit logs</h3>
 <div class="paragraph">
 <p>For interaction with management object in particular, it is recommended to implement audit logging.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_graphql">5.6. GraphQL</h3>
+<h3 id="_input_validation">5.7. Input validation</h3>
 <div class="paragraph">
-<p>The API itself is strongly typed, but consider specific security measurements related to GraphQL, such as input validation.
-For more information: <a href="https://facebook.github.io/graphql/June2018/#sec-Validation" class="bare">https://facebook.github.io/graphql/June2018/#sec-Validation</a></p>
+<p>Thanks to the usage of GraphQL, the API is strongly typed, which implies that input validation is performed on any API
+request, minimizing the attack surface even more. For more information: <a href="https://facebook.github.io/graphql/June2018/#sec-Validation" class="bare">https://facebook.github.io/graphql/June2018/#sec-Validation</a></p>
+</div>
+<div class="paragraph">
+<p>However, the input validation provided by GraphQL does not free implementations from performing measures against cross-site scripting and other script-injection attacks (eg: SQL injection).</p>
 </div>
 </div>
 </div>
@@ -4586,15 +4820,14 @@ For more information: <a href="https://facebook.github.io/graphql/June2018/#sec-
 <h2 id="_appendix_b_revision_history">8. Appendix B. Revision History</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Revision 	Date 	Editor 	Changes Made
-TODO Add history</p>
+<p>Revision 	Date 	Editor 	Changes Made</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-18 09:18:00 CEST
+Last updated 2019-05-16 10:56:04 CEST
 </div>
 </div>
 </body>
